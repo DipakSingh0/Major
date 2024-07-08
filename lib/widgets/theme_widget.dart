@@ -1,25 +1,24 @@
-// theme_widget.dart
 import 'package:flutter/material.dart';
 
 class ThemeWidget extends StatefulWidget {
   final Widget child;
 
-  const ThemeWidget(
-      {super.key,
-      required this.child,
-      required bool debugShowCheckedModeBanner});
+  const ThemeWidget({
+    Key? key,
+    required this.child,
+    required bool debugShowCheckedModeBanner,
+  }) : super(key: key);
 
   @override
   _ThemeWidgetState createState() => _ThemeWidgetState();
 
-  // ignore: library_private_types_in_public_api
+  // Accessible from BuildContext to find the nearest _ThemeWidgetState
   static _ThemeWidgetState? of(BuildContext context) {
     return context.findAncestorStateOfType<_ThemeWidgetState>();
   }
 
-  // implemented themes as static properties
-  // i.e can be shared without instanting theme class
-  // acces directly through class name
+  // Implemented themes as static properties
+  // Can be accessed directly through the class name
   static final ThemeData blueTheme = ThemeData(
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
@@ -28,6 +27,9 @@ class ThemeWidget extends StatefulWidget {
       foregroundColor: Colors.white,
     ),
     drawerTheme: const DrawerThemeData(
+      backgroundColor: Colors.blue,
+    ),
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.blue,
     ),
   );
@@ -42,6 +44,9 @@ class ThemeWidget extends StatefulWidget {
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.red,
     ),
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.red,
+    ),
   );
 
   static final ThemeData orangeTheme = ThemeData(
@@ -52,6 +57,9 @@ class ThemeWidget extends StatefulWidget {
       foregroundColor: Colors.white,
     ),
     drawerTheme: const DrawerThemeData(
+      backgroundColor: Colors.orange,
+    ),
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.orange,
     ),
   );
@@ -66,7 +74,26 @@ class ThemeWidget extends StatefulWidget {
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.black,
     ),
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.black,
+    ),
   );
+
+  static final ThemeData purpleTheme = ThemeData(
+    primaryColor: Colors.purple,
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.purple,
+      foregroundColor: Colors.white,
+    ),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: Colors.purple,),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.purple,
+    ),
+  );
+    
+  
 }
 
 class _ThemeWidgetState extends State<ThemeWidget> {

@@ -4,11 +4,17 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
+
 environment:
   sdk: '>=3.3.4 <4.0.0'
+
+
+
 dependencies:
   flutter:
     sdk: flutter
+
+
   cupertino_icons: ^1.0.8
   animated_switcher: ^1.0.1
 
@@ -16,13 +22,19 @@ dependencies:
 
   smooth_page_indicator: ^1.1.0
 
+  curved_navigation_bar: ^1.0.6 #latest version
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_gen: ^5.5.0+1
 
- 
+
+  flutter_gen: ^5.5.0+1
   flutter_lints: ^4.0.0
+
+
 
 flutter:
 
