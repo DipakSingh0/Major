@@ -1,7 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:projet/widgets/theme_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -149,26 +147,46 @@ class _HomePageState extends State<HomePage>
       ),
     );
 
-    var myChild = Container(color: Theme.of(context).scaffoldBackgroundColor);
+    var myChild = Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: Column(
+        children: [
+          Container(
+            height: 200,
+            width: 400,
+            color: Colors.lightBlue,
+            margin: const EdgeInsets.only(top: 16.0),
+            child: Center(
+              child: Text(
+                'AppBar',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Text('Main Content Area'),
+            ),
+          ),
+        ],
+      ),
+    );
 
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor:
             Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: const Duration(milliseconds: 300),
         onTap: (index) {
           print(index);
         },
         items: const [
-          Icon(
-            Icons.search_outlined,
-          ),
-          Icon(
-            Icons.home_outlined,
-          ),
-          Icon(
-            Icons.settings_outlined,
-          ),
+          Icon(Icons.search_outlined),
+          Icon(Icons.home_outlined),
+          Icon(Icons.settings_outlined),
         ],
       ),
       appBar: AppBar(
@@ -182,7 +200,6 @@ class _HomePageState extends State<HomePage>
         ),
       ),
       body: AnimatedBuilder(
-        
         animation: _animationController,
         builder: (context, _) {
           double slide = maxSlide * _animationController.value;
@@ -198,36 +215,9 @@ class _HomePageState extends State<HomePage>
                 alignment: Alignment.centerLeft,
                 child: myChild,
               ),
-
-      
-              // _BlurryContainer(),
-
-
-
             ],
           );
         },
-      ),
-    );
-  }
-
-  Widget _BlurryContainer() {
-    return Center(
-      child: BlurryContainer(
-        // color: Colors.lightBlue,
-        shadowColor: Colors.blue,
-        child: IconButton(
-          icon: Icon(Icons.person, size: 60),
-          onPressed: () {},
-        ),
-        blur: 5,
-        width: 400,
-        height: 200,
-        elevation: 0,
-      
-        color: Colors.transparent,
-        padding: const EdgeInsets.all(8),
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
       ),
     );
   }
