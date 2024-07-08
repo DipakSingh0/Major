@@ -149,29 +149,56 @@ class _HomePageState extends State<HomePage>
 
     var myChild = Container(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: Column(
-        children: [
-          Container(
-            height: 200,
-            width: 400,
-            color: Colors.lightBlue,
-            margin: const EdgeInsets.only(top: 16.0),
-            child: Center(
-              child: Text(
-                'AppBar',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
+      child: Center(
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              width: 400,
+              decoration: BoxDecoration( 
+                 color: Colors.lightBlue,
+                borderRadius: BorderRadius.circular(30)
+              ),
+              margin: const EdgeInsets.only(top: 16.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left:12.0 , top:12.0),
+                child: Text(
+                  
+                  'UserName',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: Center(
-              child: Text('Main Content Area'),
+            Container(
+              height: 200,
+              width: 400,
+              decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.circular(30)),
+              margin: const EdgeInsets.only(top: 16.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12.0, top: 12.0),
+
+                child: Text(
+                  'UserName',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
             ),
-          ),
-        ],
+        
+            Expanded(
+              child: Center(
+                child: Text('Main Content Area'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
 
