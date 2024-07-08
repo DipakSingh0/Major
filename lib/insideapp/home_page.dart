@@ -1,10 +1,8 @@
-// home_page.dart
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-// import 'package:projet/bargraphs/graph.dart';
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:projet/widgets/theme_widget.dart';
-// import 'theme_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,10 +37,6 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-
-    // Offset distance = Offset(28,28);
-    // double blur = 30.0;
-
     final themeState = ThemeWidget.of(context);
 
     var myDrawer = Container(
@@ -142,7 +136,6 @@ class _HomePageState extends State<HomePage>
               );
             },
           ),
-          
           const SizedBox(height: 10),
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.white),
@@ -160,26 +153,24 @@ class _HomePageState extends State<HomePage>
 
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor:
-              // Colors.white,
-              Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
-          // color: Theme.of(context).primaryColor,
-          animationDuration: Duration(milliseconds: 300),
-          onTap: (index) {
-            print(index);
-          },
-          items: const [
-            Icon(
-              Icons.search_outlined,
-            ),
-            Icon(
-              Icons.home_outlined,
-            ),
-            Icon(
-              Icons.settings_outlined,
-            ),
-          ]),
-      
+        backgroundColor:
+            Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
+        animationDuration: Duration(milliseconds: 300),
+        onTap: (index) {
+          print(index);
+        },
+        items: const [
+          Icon(
+            Icons.search_outlined,
+          ),
+          Icon(
+            Icons.home_outlined,
+          ),
+          Icon(
+            Icons.settings_outlined,
+          ),
+        ],
+      ),
       appBar: AppBar(
         title: const Text('Home Page'),
         leading: IconButton(
@@ -190,8 +181,8 @@ class _HomePageState extends State<HomePage>
           onPressed: toggleDrawer,
         ),
       ),
-      
       body: AnimatedBuilder(
+        
         animation: _animationController,
         builder: (context, _) {
           double slide = maxSlide * _animationController.value;
@@ -199,21 +190,7 @@ class _HomePageState extends State<HomePage>
 
           return Stack(
             children: <Widget>[
-
-               myDrawer,
-
-            // _flchart(),
-            // IconButton(
-            //   icon: Icon(Icons.bar_chart),
-            //   onPressed: () => Navigator.push(
-            //     context,
-            //     MaterialPageRoute(builder: (context) => const Graph_page()),
-            //   ),
-            // ),
-
-            
-
-             
+              myDrawer,
               Transform(
                 transform: Matrix4.identity()
                   ..translate(slide)
@@ -221,22 +198,37 @@ class _HomePageState extends State<HomePage>
                 alignment: Alignment.centerLeft,
                 child: myChild,
               ),
+
+      
+              // _BlurryContainer(),
+
+
+
             ],
           );
         },
       ),
     );
   }
+
+  Widget _BlurryContainer() {
+    return Center(
+      child: BlurryContainer(
+        // color: Colors.lightBlue,
+        shadowColor: Colors.blue,
+        child: IconButton(
+          icon: Icon(Icons.person, size: 60),
+          onPressed: () {},
+        ),
+        blur: 5,
+        width: 400,
+        height: 200,
+        elevation: 0,
+      
+        color: Colors.transparent,
+        padding: const EdgeInsets.all(8),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+      ),
+    );
+  }
 }
-
-
-// Widget _flchart(){
-//  return IconButton(
-//    icon: Icon(Icons.bar_chart),
-//    onPressed: () => Navigator.push(
-//      context,
-//      MaterialPageRoute(builder: (context) => const Graph_page()),
-//    ),
-//  );
-
-// }
