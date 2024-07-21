@@ -181,7 +181,6 @@ class _HomePageState extends State<HomePage>
               margin: const EdgeInsets.only(top: 16.0),
               child: Padding(
                 padding: const EdgeInsets.only(left: 12.0, top: 12.0),
-
                 child: Text(
                   'UserName',
                   style: TextStyle(
