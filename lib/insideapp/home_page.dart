@@ -160,8 +160,8 @@ class _HomePageState extends State<HomePage>
                 borderRadius: BorderRadius.circular(30)
               ),
               margin: const EdgeInsets.only(top: 16.0),
-              child: Padding(
-                padding: const EdgeInsets.only(left:12.0 , top:12.0),
+              child: const Padding(
+                padding: EdgeInsets.only(left:12.0 , top:12.0),
                 child: Text(
                   
                   'UserName',
@@ -179,8 +179,8 @@ class _HomePageState extends State<HomePage>
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(30)),
               margin: const EdgeInsets.only(top: 16.0),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12.0, top: 12.0),
+              child: const Padding(
+                padding:  EdgeInsets.only(left: 12.0, top: 12.0),
                 child: Text(
                   'UserName',
                   style: TextStyle(
@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage>
               ),
             ),
         
-            Expanded(
+            const Expanded(
               child: Center(
                 child: Text('Main Content Area'),
               ),

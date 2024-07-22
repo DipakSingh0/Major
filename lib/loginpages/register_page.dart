@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet/loginpages/login_page.dart';
+import 'package:projet/loginpages/register_verifn.dart';
 
 class RegisterPage extends StatelessWidget {
 
@@ -53,7 +54,7 @@ class RegisterPage extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Email',
+                        hintText: 'First Name',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -66,7 +67,7 @@ class RegisterPage extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Phone Number',
+                        hintText: 'Last Name',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -74,6 +75,19 @@ class RegisterPage extends StatelessWidget {
                       
                     ),
                     const SizedBox(height: 15),
+                    TextField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                        hintText: 'Email', // Correct hintText
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      obscureText: true, // Hide the password
+                    ),
+                    const SizedBox(height: 15),
+
                     TextField(
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
@@ -97,7 +111,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       obscureText: true, // Hide the password
                     ),
-                    // const SizedBox(height: 10),
+                    // const SizedBox(height: 15),
                     const SizedBox(height: 60),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,7 +133,7 @@ class RegisterPage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const LoginPage()),
+                                    builder: (context) => const RegisterVerificationPage()),
                               );
                             },
           

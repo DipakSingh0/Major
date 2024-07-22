@@ -46,16 +46,17 @@ class LoginPage extends StatelessWidget {
         child: Stack(
           
           children: [
-            // const Padding(
-            //   padding: EdgeInsets.only(left: 40, top: 20),
-            //   child: Text(
-            //     'Welcome Back',
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //       fontSize: 33,
-            //     ),
-            //   ),
-            // ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, top: 20),
+              child: Text(
+                'Welcome Back',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 33,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             SingleChildScrollView(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * 0.4,
@@ -93,7 +94,7 @@ class LoginPage extends StatelessWidget {
                       const Text(
                         'Login',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xff4c505b),
                             fontSize: 27,
                             fontWeight: FontWeight.bold),
                       ),
