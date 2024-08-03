@@ -47,12 +47,12 @@ class LoginPage extends StatelessWidget {
           
           children: [
             const Padding(
-              padding: EdgeInsets.only(left: 30, top: 20),
+              padding: EdgeInsets.only(left: 25, top: 80),
               child: Text(
                 'Welcome Back',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 33,
+                  fontSize: 35,
                   fontWeight: FontWeight.bold,
                 ),
               ),

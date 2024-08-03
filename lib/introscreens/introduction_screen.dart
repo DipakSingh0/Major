@@ -44,8 +44,8 @@ class _IntroScreenState extends State<IntroScreen> {
           // Replace your existing Container with this
           Container(
             alignment: const Alignment(0, 0.75),
-            // padding: const EdgeInsets.only(top: 700),
-            padding: const EdgeInsets.only(top: 400),
+            padding: const EdgeInsets.only(top: 500),
+            // padding: const EdgeInsets.only(top: 400),
 
             child: Column(
               children: [

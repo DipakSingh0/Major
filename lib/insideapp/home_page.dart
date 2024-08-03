@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:projet/users/user1.dart';
 import 'package:projet/widgets/theme_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage>
                   children: [
                     CircleAvatar(
                       radius: 52,
-                      backgroundImage: AssetImage('asssets/admin.jpg'),
+                      // backgroundImage: AssetImage('asssets/admin.jpg'),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -162,51 +163,60 @@ class _HomePageState extends State<HomePage>
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
-                    Container(
-                      height: 200,
-                      width: 500,
-                      decoration: BoxDecoration(
-                        color: Colors.brown[100],
-                        borderRadius: BorderRadius.circular(35),
-                         boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 4,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                          const BoxShadow(
+                     GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => const User1()),
+                        );
+                      },
+                      child: Container(
+                        height: 200,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          color: Colors.brown[100],
+                          borderRadius: BorderRadius.circular(40),
+                           boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 4,
+                              offset: Offset(0, 3),
+                            ),
+                            const BoxShadow(
+                              color: Colors.white,
+                              offset: Offset(-4.0, -4.0),
+                              blurRadius: 6,
+                              spreadRadius: 1.0,
+                            )
+                          ],
+                        ),
+                        margin: const EdgeInsets.only(top: 16.0),
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 18.0, top: 14.0),
+                          child: Text(
+                            'UserName',
+                            style: TextStyle(
                             color: Colors.white,
-                            offset: Offset(-4.0, -4.0),
-                            blurRadius: 6,
-                            spreadRadius: 1.0,
-                          )
-                        ],
-                      ),
-                      margin: const EdgeInsets.only(top: 16.0),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 14.0, top: 14.0),
-                        child: Text(
-                          'UserName',
-                          style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
+                            fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     Container(
                       height: 200,
-                      width: 500,
+                      width: 400,
                       decoration: BoxDecoration(
                       color: Colors.brown[100],
-                      borderRadius: BorderRadius.circular(35),
+                      borderRadius: BorderRadius.circular(40),
                        boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.3),
                             spreadRadius: 2,
                             blurRadius: 4,
-                            offset: Offset(0, 3), // changes position of shadow
+                            offset: Offset(0, 3), 
                           ),
                           const BoxShadow(
                             color: Colors.white,
@@ -218,7 +228,49 @@ class _HomePageState extends State<HomePage>
                       ),
                       margin: const EdgeInsets.only(top: 16.0),
                       child: const Padding(
-                        padding: EdgeInsets.only(left: 14.0, top: 14.0),
+                        padding: EdgeInsets.only(left: 18.0, top: 14.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'UserName',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                            // ElevatedButton(
+                            //   onPressed:() {
+
+                            // }, child: Text('Edit'),
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ),
+                     Container(
+                      height: 200,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.brown[100],
+                        borderRadius: BorderRadius.circular(35),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                          const BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0, -4.0),
+                            blurRadius: 6,
+                            spreadRadius: 1.0,
+                          )
+                        ],
+                      ),
+                      margin: const EdgeInsets.only(top: 16.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 18.0, top: 14.0),
                         child: Text(
                           'UserName',
                           style: TextStyle(
@@ -230,23 +282,23 @@ class _HomePageState extends State<HomePage>
                     ),
                     Container(
                       height: 200,
-                      width: 500,
+                      width: 400,
                       decoration: BoxDecoration(
                         color: Colors.brown[100],
                         borderRadius: BorderRadius.circular(30),
                          boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
+                            color: Colors.black.withOpacity(0.3),
                             spreadRadius: 2,
                             blurRadius: 4,
-                            offset: Offset(0, 3), // changes position of shadow
+                            offset: Offset(0, 3),
                           ),
                           const BoxShadow(
                             color: Colors.white,
                             offset: Offset(-4.0, -4.0),
                             blurRadius: 6,
                             spreadRadius: 1.0,
-                          )
+                          ),
                         ],
                       ),
                       margin: const EdgeInsets.only(top: 16.0),
@@ -261,7 +313,7 @@ class _HomePageState extends State<HomePage>
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(height: 20),
                    
                   ],
                 ),

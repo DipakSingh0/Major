@@ -43,10 +43,9 @@ class RegisterPage extends StatelessWidget {
               // ),
               SingleChildScrollView(
                 padding: EdgeInsets.only(
-                  // horizontal: 35, vertical: 50
                 top: MediaQuery.of(context).size.height * 0.3, 
                 left: 35,
-                 right: 35,
+                right: 35,
                 ),
                 child: Column(
                   children: [
@@ -79,12 +78,12 @@ class RegisterPage extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Email', // Correct hintText
+                        hintText: 'Email',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      obscureText: true, // Hide the password
+                      obscureText: false, 
                     ),
                     const SizedBox(height: 15),
 
@@ -92,24 +91,24 @@ class RegisterPage extends StatelessWidget {
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Password', // Correct hintText
+                        hintText: 'Password', 
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      obscureText: true, // Hide the password
+                      obscureText: true,
                     ),
                     const SizedBox(height: 15),
                     TextField(
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Confirm Password', // Correct hintText
+                        hintText: 'Confirm Password',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      obscureText: true, // Hide the password
+                      obscureText: true,
                     ),
                     // const SizedBox(height: 15),
                     const SizedBox(height: 60),
