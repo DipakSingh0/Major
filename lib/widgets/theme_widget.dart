@@ -1,37 +1,59 @@
 import 'package:flutter/material.dart';
 
+
+// class BodyThemeData{
+//   final Color backgroundColor;
+
+//   const BodyThemeData({required this.backgroundColor});
+// }
 class ThemeWidget extends StatefulWidget {
   final Widget child;
 
-  const ThemeWidget({
-    Key? key,
-    required this.child,
+  const ThemeWidget({super.key,
+    required this.child, 
     required bool debugShowCheckedModeBanner,
-  }) : super(key: key);
+  });
+
+
 
   @override
   _ThemeWidgetState createState() => _ThemeWidgetState();
 
-  // Accessible from BuildContext to find the nearest _ThemeWidgetState
+
   static _ThemeWidgetState? of(BuildContext context) {
     return context.findAncestorStateOfType<_ThemeWidgetState>();
   }
 
-  // Implemented themes as static properties
-  // Can be accessed directly through the class name
   static final ThemeData blueTheme = ThemeData(
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
+
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.blue,
       foregroundColor: Colors.white,
     ),
+
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.blue,
     ),
-     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.blue,
     ),
+
+    // bodyTheme :  BodyThemeData(
+    //   backgroundColor: Colors.lightBlue.shade500,
+    // ),
+
+    // textTheme: const TextTheme(
+    //   headline1: TextStyle(
+    //       fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.blue),
+    //   bodyText1: TextStyle(fontSize: 16.0, color: Colors.blue),
+    // ),
+   
+    // containerTheme: const ContainerTheme(
+    //   backgroundColor: Colors.blue.shade100,
+    // ),
   );
 
   static final ThemeData redTheme = ThemeData(
@@ -44,9 +66,23 @@ class ThemeWidget extends StatefulWidget {
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.red,
     ),
-     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.red,
     ),
+    //  bodyBackgroundTheme : const bodyBackgroundTheme(
+    //   backgroundColor: Colors.red.shade100
+    // ),
+    // textTheme: const TextTheme(
+    //   headline1: TextStyle(
+    //       fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.red),
+    //   bodyText1: TextStyle(fontSize: 16.0, color: Colors.red),
+    // ),
+   
+   
+   
+    //   containerTheme: const ContainerTheme(
+    //   backgroundColor: Colors.red.shade100,
+    // ),
   );
 
   static final ThemeData orangeTheme = ThemeData(
@@ -59,9 +95,23 @@ class ThemeWidget extends StatefulWidget {
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.orange,
     ),
-     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.orange,
     ),
+    //  bodyBackgroundTheme : const bodyBackgroundTheme(
+    //   backgroundColor: Colors.lightBlue.shade100;
+    // ),
+    // textTheme: const TextTheme(
+    //   headline1: TextStyle(
+    //       fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.orange),
+    //   bodyText1: TextStyle(fontSize: 16.0, color: Colors.orange),
+    // ),
+   
+   
+   
+    // containerTheme: const ContainerTheme(
+    //   backgroundColor: Colors.orange.shade100,
+    // ),
   );
 
   static final ThemeData blackTheme = ThemeData(
@@ -74,9 +124,22 @@ class ThemeWidget extends StatefulWidget {
     drawerTheme: const DrawerThemeData(
       backgroundColor: Colors.black,
     ),
-     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
     ),
+    //  bodyBackgroundTheme : const bodyBackgroundTheme(
+    //   backgroundColor: Colors.lightBlue.shade100;
+    // ),
+    // textTheme: const TextTheme(
+    //   headline1: TextStyle(
+    //       fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.black),
+    //   bodyText1: TextStyle(fontSize: 16.0, color: Colors.black),
+    // ),
+    
+    
+    // containerTheme: const ContainerTheme(
+    //   backgroundColor: Colors.black.shade100,
+    // ),
   );
 
   static final ThemeData purpleTheme = ThemeData(
@@ -87,13 +150,26 @@ class ThemeWidget extends StatefulWidget {
       foregroundColor: Colors.white,
     ),
     drawerTheme: const DrawerThemeData(
-      backgroundColor: Colors.purple,),
+      backgroundColor: Colors.purple,
+    ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.purple,
     ),
-  );
+    //  bodyBackgroundTheme : const bodyBackgroundTheme(
+    //   backgroundColor: Colors.lightBlue.shade100;
+    // ),
+    // textTheme: const TextTheme(
+    //   headline1: TextStyle(
+    //       fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.purple),
+    //   bodyText1: TextStyle(fontSize: 16.0, color: Colors.purple),
+    // ),
     
-  
+    
+    
+    // containerTheme: const ContainerTheme(
+    //   backgroundColor: Colors.purple.shade100,
+    // ),
+  );
 }
 
 class _ThemeWidgetState extends State<ThemeWidget> {

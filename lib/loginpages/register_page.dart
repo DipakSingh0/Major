@@ -30,17 +30,17 @@ class RegisterPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 140, top:80),
-                child: Text(
-                  'Register',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 33,
-                  ),
-                ),
-              ),
+              // const Padding(
+              //   padding: EdgeInsets.only(left: 140, top:80),
+              //   child: Text(
+              //     'Register',
+              //     style: TextStyle(
+              //       fontWeight: FontWeight.bold,
+              //       color: Colors.white,
+              //       fontSize: 33,
+              //     ),
+              //   ),
+              // ),
               SingleChildScrollView(
                 padding: EdgeInsets.only(
                   // horizontal: 35, vertical: 50

@@ -60,7 +60,9 @@ class _IntroScreenState extends State<IntroScreen> {
                       child: const Text(
                         'Skip',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold, 
+                            color: Colors.white),
                       ),
                     ),
 
@@ -77,6 +79,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             child: const Text(
                               'Done',
                               style: TextStyle(
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
@@ -93,6 +96,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             child: const Text(
                               'Next',
                               style: TextStyle(
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),

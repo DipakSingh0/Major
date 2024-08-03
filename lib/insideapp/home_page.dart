@@ -51,13 +51,13 @@ class _HomePageState extends State<HomePage>
             child: const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(left: 50.0),
+                padding: EdgeInsets.only(left: 55.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(
                       radius: 52,
-                      // backgroundImage: Image(image: Asssets/b.jpg),
+                      backgroundImage: AssetImage('asssets/admin.jpg'),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage>
             leading: const Icon(Icons.person, color: Colors.white),
             title: const Text('Profile', style: TextStyle(color: Colors.white)),
             onTap: () {
-              print("profileTapped!!");
+              // print("profileTapped!!");
             },
           ),
           ListTile(
@@ -134,7 +134,8 @@ class _HomePageState extends State<HomePage>
               );
             },
           ),
-          const SizedBox(height: 10),
+          // const SizedBox(height: 10),
+          
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.white),
             title:
@@ -147,59 +148,131 @@ class _HomePageState extends State<HomePage>
       ),
     );
 
-    var myChild = Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
+
+      
+      var myChild = Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        // color: Theme.of(context).BodyThemeData,
+      // color: Colors.white,
       child: Center(
         child: Column(
           children: [
-            Container(
-              height: 200,
-              width: 400,
-              decoration: BoxDecoration( 
-                 color: Colors.lightBlue,
-                borderRadius: BorderRadius.circular(30)
-              ),
-              margin: const EdgeInsets.only(top: 16.0),
-              child: const Padding(
-                padding: EdgeInsets.only(left:12.0 , top:12.0),
-                child: Text(
-                  
-                  'UserName',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Container(
+                      height: 200,
+                      width: 500,
+                      decoration: BoxDecoration(
+                        color: Colors.brown[100],
+                        borderRadius: BorderRadius.circular(35),
+                         boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                          const BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0, -4.0),
+                            blurRadius: 6,
+                            spreadRadius: 1.0,
+                          )
+                        ],
+                      ),
+                      margin: const EdgeInsets.only(top: 16.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 14.0, top: 14.0),
+                        child: Text(
+                          'UserName',
+                          style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 500,
+                      decoration: BoxDecoration(
+                      color: Colors.brown[100],
+                      borderRadius: BorderRadius.circular(35),
+                       boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                          const BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0 , -4.0),
+                            blurRadius: 6,
+                            spreadRadius: 1.0,
+                          )
+                        ],
+                      ),
+                      margin: const EdgeInsets.only(top: 16.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 14.0, top: 14.0),
+                        child: Text(
+                          'UserName',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 200,
+                      width: 500,
+                      decoration: BoxDecoration(
+                        color: Colors.brown[100],
+                        borderRadius: BorderRadius.circular(30),
+                         boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                          const BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0, -4.0),
+                            blurRadius: 6,
+                            spreadRadius: 1.0,
+                          )
+                        ],
+                      ),
+                      margin: const EdgeInsets.only(top: 16.0),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 14.0, top: 14.0),
+                        child: Text(
+                          'UserName',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20,),
+                   
+                  ],
                 ),
               ),
             ),
-            Container(
-              height: 200,
-              width: 400,
-              decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(30)),
-              margin: const EdgeInsets.only(top: 16.0),
-              child: const Padding(
-                padding:  EdgeInsets.only(left: 12.0, top: 12.0),
-                child: Text(
-                  'UserName',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-        
-            const Expanded(
-              child: Center(
-                child: Text('Main Content Area'),
-              ),
-            ),
+            
           ],
         ),
       ),
     );
+
 
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
@@ -247,4 +320,5 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
+
 }

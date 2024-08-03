@@ -20,7 +20,7 @@ dependencies:
 
   introduction_screen: ^3.1.14
 
-  smooth_page_indicator: ^1.1.0
+  smooth_page_indicator: ^1.2.0+3
 
   curved_navigation_bar: ^1.0.6 #latest version
 
@@ -44,15 +44,18 @@ flutter:
 
   assets:
     # - lib/assets/one.jpeg
-    - lib/assets/register1.jpeg
-    - lib/assets/page.jpeg
-    - lib/assets/register.png
-    - lib/assets/register2.png
-
-    - lib/assets/login.png
     - lib/assets/intro1.jpeg
     - lib/assets/intro2.jpeg
     - lib/assets/intro3.jpeg
+
+
+    - lib/assets/page.jpeg
+    - lib/assets/register.png
+    - lib/assets/register1.jpeg
+    - lib/assets/register2.png
+    - lib/assets/admin.jpg
+
+
 
 
     
