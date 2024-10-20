@@ -8,12 +8,12 @@ class IntroPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-     // Get the screen size
+     // Getting the screen size for flexible Ui
     Size screenSize = MediaQuery.of(context).size;
-    // double aspectRatio = 16 / 9; // width / height
+    double aspectRatio = 16 / 9; // width / height
     return  Container(
       width: screenSize.width,
-      // height: screenSize.width / aspectRatio, 
+      height: screenSize.width / aspectRatio, 
       decoration: const BoxDecoration(
         image: DecorationImage(image: AssetImage('lib/assets/intro1.jpeg'),
         fit: BoxFit.cover,

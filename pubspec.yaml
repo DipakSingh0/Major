@@ -29,6 +29,7 @@ dependencies:
   fl_chart: ^0.67.0
   animated_progress_bar: ^0.0.3
   graphs: ^2.3.2
+  http: ^1.2.2
 
 
 
@@ -37,8 +38,8 @@ dev_dependencies:
     sdk: flutter
 
 
-  flutter_gen: ^5.6.0
-  flutter_lints: ^4.0.0
+  flutter_gen: ^5.8.0
+  flutter_lints: ^5.0.0
 
 
 

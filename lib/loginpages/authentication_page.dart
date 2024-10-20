@@ -8,7 +8,6 @@ class AuthenticationPage extends StatelessWidget {
     // screenSize = MediaQuery.of(context).size;
     
     return Scaffold(
-
       appBar: AppBar(
         title: const Text('Authentication'),
       ),

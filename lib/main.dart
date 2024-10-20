@@ -11,10 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ThemeWidget(
-      debugShowCheckedModeBanner: false,
-       child:IntroScreen(),
-
+    return Material(
+      child: const ThemeWidget(
+        debugShowCheckedModeBanner: false,
+         child:IntroScreen(),
+      
+      ),
     );
   }
 }

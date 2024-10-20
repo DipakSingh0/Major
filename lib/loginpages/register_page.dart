@@ -13,10 +13,6 @@ class RegisterPage extends StatelessWidget {
     // final textColor = Colors.white;
     //  double aspectRatio = 16 / 9; // width / height
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   title: const Text('Create\n Account'),
-      // ),
       body: Container(
         width: screenSize.width,
         height: screenSize.height,
@@ -28,26 +24,26 @@ class RegisterPage extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.transparent,
+            title: const Text(
+              'Create Account' , 
+              style: TextStyle(
+                fontSize: 30 , 
+                color: Colors.black87,
+              ),),
+          ),
           body: Stack(
             children: [
-              // const Padding(
-              //   padding: EdgeInsets.only(left: 140, top:80),
-              //   child: Text(
-              //     'Register',
-              //     style: TextStyle(
-              //       fontWeight: FontWeight.bold,
-              //       color: Colors.white,
-              //       fontSize: 33,
-              //     ),
-              //   ),
-              // ),
               SingleChildScrollView(
                 padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.3, 
+                top: MediaQuery.of(context).size.height * 0.20, 
                 left: 35,
                 right: 35,
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextField(
                       decoration: InputDecoration(

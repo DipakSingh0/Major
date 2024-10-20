@@ -44,7 +44,7 @@ class _IntroScreenState extends State<IntroScreen> {
           // Replace your existing Container with this
           Container(
             alignment: const Alignment(0, 0.75),
-            padding: const EdgeInsets.only(top: 500),
+            padding: const EdgeInsets.only(top: 450),
             // padding: const EdgeInsets.only(top: 400),
 
             child: Column(
@@ -62,7 +62,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold, 
-                            color: Colors.white),
+                            color: Colors.black45),
                       ),
                     ),
 
@@ -81,7 +81,7 @@ class _IntroScreenState extends State<IntroScreen> {
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: Colors.black45),
                             ),
                           )
                         : GestureDetector(
@@ -98,12 +98,12 @@ class _IntroScreenState extends State<IntroScreen> {
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: Colors.black45),
                             ),
                           ),
                   ],
                 ),
-                const SizedBox(height: 20), // Add some space between buttons and SmoothPageIndicator
+                const SizedBox(height: 40), // Add some space between buttons and SmoothPageIndicator
                 //dot indicator
                 SmoothPageIndicator(controller: _controller, count: 3),
               ],

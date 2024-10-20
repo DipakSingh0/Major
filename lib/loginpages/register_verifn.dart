@@ -7,6 +7,7 @@ class RegisterVerificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    //double aspectRatio = 16/9;
 
     return Scaffold(
       body: Container(
@@ -18,43 +19,65 @@ class RegisterVerificationPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  decoration: InputDecoration(
-                    fillColor: Colors.grey.shade100,
-                    filled: true,
-                    hintText: 'Phone Number',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  keyboardType: TextInputType.phone,
-                ),
-                const SizedBox(height: 20), // Space between TextField and Button
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightBlue.shade200,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const VerificationCode(),
-                      ),
-                    );
-                  },
-                  child: const Text('Send Verification Code',
-                  style: TextStyle(color: Colors.white),),
-                ),
-              ],
-            ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+          backgroundColor: Colors.transparent,
+            title: const Text('Register' ,  
+            style: TextStyle(
+              color: Colors.white, 
+              fontSize: 30  
+              // fontWeight:  ,
+              ),),
+
           ),
-        ),
+          body: Stack(
+            children: [
+           SingleChildScrollView(
+             child: Padding(
+              padding:  EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.4,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                        hintText: 'Phone Number',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      keyboardType: TextInputType.phone,
+                    ),
+                    const SizedBox(height: 20), // Space between TextField and Button
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.lightBlue.shade200,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VerificationCode(),
+                          ),
+                        );
+                      },
+                      child: const Text('Send Verification Code',
+                      style: TextStyle(color: Colors.white),),
+                    ),
+                  ],
+                ),
+              ),
+                       ),
+           ),
+        ])
+        )
+        ,
       ),
     );
   }
