@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../loginpages/login_page.dart';
+// import '../loginpages/login_page.dart';
 import 'intro_page1.dart';
 import 'intro_page2.dart';
 import 'intro_page3.dart';

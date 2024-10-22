@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projet/pages/loginpages/loginpages/login_page.dart';
+import 'package:projet/pages/loginpages/login_page.dart';
 
 class VerificationCode extends StatefulWidget {
   const VerificationCode({super.key});

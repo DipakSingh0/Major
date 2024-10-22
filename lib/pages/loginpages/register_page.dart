@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/loginpages/loginpages/login_page.dart';
-import 'package:projet/pages/loginpages/loginpages/register_verifn.dart';
+import 'package:projet/pages/loginpages/login_page.dart';
+import 'package:projet/pages/loginpages/register_verifn.dart';
 
 class RegisterPage extends StatelessWidget {
 

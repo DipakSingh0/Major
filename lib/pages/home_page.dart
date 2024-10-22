@@ -15,6 +15,8 @@ class _HomePageState extends State<HomePage>
   final double maxSlide = 225.0;
   late AnimationController _animationController;
 
+  // var screensize = MediaQuery.of(context).size ;
+
   @override
   void initState() {
     super.initState();
@@ -136,7 +138,7 @@ class _HomePageState extends State<HomePage>
             },
           ),
           // const SizedBox(height: 10),
-          
+
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.white),
             title:
@@ -149,11 +151,9 @@ class _HomePageState extends State<HomePage>
       ),
     );
 
-
-      
-      var myChild = Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        // color: Theme.of(context).BodyThemeData,
+    var myChild = Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      // color: Theme.of(context).BodyThemeData,
       // color: Colors.white,
       child: Center(
         child: Column(
@@ -163,12 +163,12 @@ class _HomePageState extends State<HomePage>
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
-                     GestureDetector(
-                      onTap: (){
+                    GestureDetector(
+                      onTap: () {
                         Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => const User1()),
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const User1()),
                         );
                       },
                       child: Container(
@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage>
                         decoration: BoxDecoration(
                           color: Colors.brown[100],
                           borderRadius: BorderRadius.circular(40),
-                           boxShadow: [
+                          boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.3),
                               spreadRadius: 2,
@@ -198,8 +198,8 @@ class _HomePageState extends State<HomePage>
                           child: Text(
                             'UserName',
                             style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
+                              color: Colors.white,
+                              fontSize: 18,
                             ),
                           ),
                         ),
@@ -209,18 +209,18 @@ class _HomePageState extends State<HomePage>
                       height: 200,
                       width: 400,
                       decoration: BoxDecoration(
-                      color: Colors.brown[100],
-                      borderRadius: BorderRadius.circular(40),
-                       boxShadow: [
+                        color: Colors.brown[100],
+                        borderRadius: BorderRadius.circular(40),
+                        boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.3),
                             spreadRadius: 2,
                             blurRadius: 4,
-                            offset: Offset(0, 3), 
+                            offset: Offset(0, 3),
                           ),
                           const BoxShadow(
                             color: Colors.white,
-                            offset: Offset(-4.0 , -4.0),
+                            offset: Offset(-4.0, -4.0),
                             blurRadius: 6,
                             spreadRadius: 1.0,
                           )
@@ -247,7 +247,7 @@ class _HomePageState extends State<HomePage>
                         ),
                       ),
                     ),
-                     Container(
+                    Container(
                       height: 200,
                       width: 400,
                       decoration: BoxDecoration(
@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage>
                       decoration: BoxDecoration(
                         color: Colors.brown[100],
                         borderRadius: BorderRadius.circular(30),
-                         boxShadow: [
+                        boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.3),
                             spreadRadius: 2,
@@ -314,17 +314,14 @@ class _HomePageState extends State<HomePage>
                       ),
                     ),
                     const SizedBox(height: 20),
-                   
                   ],
                 ),
               ),
             ),
-            
           ],
         ),
       ),
     );
-
 
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
@@ -372,5 +369,4 @@ class _HomePageState extends State<HomePage>
       ),
     );
   }
-
 }

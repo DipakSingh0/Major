@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/loginpages/loginpages/login_page.dart';
+import 'pages/loginpages/login_page.dart';
 import 'widgets/theme_widget.dart';
 
 void main() {

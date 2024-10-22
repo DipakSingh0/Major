@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/loginpages/loginpages/verification_code.dart';
+import 'package:projet/pages/loginpages/verification_code.dart';
 
 class RegisterVerificationPage extends StatelessWidget {
   const RegisterVerificationPage({super.key});
