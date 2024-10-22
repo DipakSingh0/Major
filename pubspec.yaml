@@ -26,7 +26,7 @@ dependencies:
 
   blurrycontainer: 2.1.0
 
-  fl_chart: ^0.67.0
+  fl_chart: ^0.69.0
   animated_progress_bar: ^0.0.3
   graphs: ^2.3.2
   http: ^1.2.2

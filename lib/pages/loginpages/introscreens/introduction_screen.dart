@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projet/loginpages/login_page.dart';
-// import 'package:projet/welcome_page.dart';
-import 'package:projet/introscreens/intro_page1.dart';
-import 'package:projet/introscreens/intro_page2.dart';
-import 'package:projet/introscreens/intro_page3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../loginpages/login_page.dart';
+import 'intro_page1.dart';
+import 'intro_page2.dart';
+import 'intro_page3.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});

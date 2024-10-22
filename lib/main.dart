@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/introscreens/introduction_screen.dart';
+import 'pages/loginpages/loginpages/login_page.dart';
 import 'widgets/theme_widget.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return Material(
       child: const ThemeWidget(
         debugShowCheckedModeBanner: false,
-         child:IntroScreen(),
+         child: LoginPage(),
       
       ),
     );

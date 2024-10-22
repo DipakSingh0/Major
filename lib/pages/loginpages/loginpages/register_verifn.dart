@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/loginpages/verification_code.dart';
+import 'package:projet/pages/loginpages/loginpages/verification_code.dart';
 
 class RegisterVerificationPage extends StatelessWidget {
   const RegisterVerificationPage({super.key});
@@ -54,7 +54,7 @@ class RegisterVerificationPage extends StatelessWidget {
                       ),
                       keyboardType: TextInputType.phone,
                     ),
-                    const SizedBox(height: 20), // Space between TextField and Button
+                     SizedBox(height: screenSize.height * 0.020), // Space between TextField and Button
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.lightBlue.shade200,

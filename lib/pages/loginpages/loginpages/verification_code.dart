@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projet/loginpages/login_page.dart';
+import 'package:projet/pages/loginpages/loginpages/login_page.dart';
 
 class VerificationCode extends StatefulWidget {
   const VerificationCode({super.key});
@@ -48,7 +48,8 @@ class _VerificationCodeState extends State<VerificationCode> {
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: screenSize.height*  0.02),
+                      
                       // Six boxes for verification code entry
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +97,8 @@ class _VerificationCodeState extends State<VerificationCode> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: screenSize.height * 0.02),
+
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.lightBlue.shade200,

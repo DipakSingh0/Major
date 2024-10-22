@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/home_page.dart';
-import 'package:projet/loginpages/register_page.dart';
+import 'package:projet/pages/loginpages/loginpages/register_page.dart';
+// import 'package:projet/pages/loginpages/register_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,12 +9,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Getthing the mobile screen size
-    Size screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size;
     // double aspectRatio = 16/9;
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
+      body: SingleChildScrollView(
+        child: Container(
             width: screenSize.width,
             height: screenSize.height,
             decoration: const BoxDecoration(
@@ -25,7 +25,9 @@ class LoginPage extends StatelessWidget {
             child: Stack(
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 25, top: 80),
+                  padding: EdgeInsets.only(
+                    left: 25, 
+                    top:  60),
                   child: Text(
                     'Welcome Back',
                     style: TextStyle(
@@ -35,14 +37,13 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SingleChildScrollView(
-                  padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.4,
+                Positioned(
+                    top: screenSize.height * 0.4,
                     left: 35,
                     right: 35,
-                  ),
                   child: Column(
                     children: [
+                      //Email textfield
                       TextField(
                         decoration: InputDecoration(
                           fillColor: Colors.grey.shade100,
@@ -53,19 +54,21 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                     SizedBox(height: screenSize.height* 0.02),
+
+                     //Password Textfield
                       TextField(
                         decoration: InputDecoration(
                           fillColor: Colors.grey.shade100,
                           filled: true,
-                          hintText: 'Password', // Correct hintText
+                          hintText: 'Password', 
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                         obscureText: true, // Hiding the password
                       ),
-                      const SizedBox(height: 40),
+                       SizedBox(height: screenSize.height* 0.03),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -91,13 +94,13 @@ class LoginPage extends StatelessWidget {
                                       builder: (context) => const HomePage()),
                                 );
                               },
-
+      
                               icon: const Icon(Icons.arrow_forward),
                             ),
                           )
                         ],
                       ),
-                      const SizedBox(height: 40),
+                       SizedBox(height: screenSize.height* 0.04),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -125,7 +128,7 @@ class LoginPage extends StatelessWidget {
                                 'Forgot Password',
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
-                                  fontSize: 18,
+                                  fontSize:  18 ,
                                   color: Colors.black,
                                 ),
                               ))
@@ -137,7 +140,7 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-        ],
+        
       ),
     );
   }

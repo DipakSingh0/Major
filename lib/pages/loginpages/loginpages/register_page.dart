@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projet/loginpages/login_page.dart';
-import 'package:projet/loginpages/register_verifn.dart';
+import 'package:projet/pages/loginpages/loginpages/login_page.dart';
+import 'package:projet/pages/loginpages/loginpages/register_verifn.dart';
 
 class RegisterPage extends StatelessWidget {
 
@@ -8,7 +8,7 @@ class RegisterPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size;
 
     // final textColor = Colors.white;
     //  double aspectRatio = 16 / 9; // width / height
@@ -38,7 +38,7 @@ class RegisterPage extends StatelessWidget {
             children: [
               SingleChildScrollView(
                 padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.20, 
+                top: MediaQuery.of(context).size.height * 0.15, 
                 left: 35,
                 right: 35,
                 ),
@@ -55,7 +55,7 @@ class RegisterPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: screenSize.height* 0.015),
                     
 
                     TextField(
@@ -69,7 +69,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: screenSize.height* 0.015),
                     TextField(
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
@@ -81,7 +81,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       obscureText: false, 
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: screenSize.height * 0.015),
 
                     TextField(
                       decoration: InputDecoration(
@@ -94,7 +94,8 @@ class RegisterPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: screenSize.height * 0.015),
+
                     TextField(
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
@@ -106,8 +107,8 @@ class RegisterPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-                    // const SizedBox(height: 15),
-                    const SizedBox(height: 60),
+                    SizedBox(height: screenSize.height * 0.065),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -137,7 +138,7 @@ class RegisterPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: screenSize.height * 0.035),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -155,7 +156,7 @@ class RegisterPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //  const SizedBox(height:40, width: 40, ),
+                        
                          TextButton(
                             onPressed: () {},
                             child: const Text(
