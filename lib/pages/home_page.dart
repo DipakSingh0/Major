@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage>
             title:
                 const Text('Settings', style: TextStyle(color: Colors.white)),
             onTap: () {
-              print("tapped!!");
+              // print("tapped!!");
             },
           ),
         ],
@@ -329,7 +329,7 @@ class _HomePageState extends State<HomePage>
             Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
         animationDuration: const Duration(milliseconds: 300),
         onTap: (index) {
-          print(index);
+          // print(index);
         },
         items: const [
           Icon(Icons.search_outlined),

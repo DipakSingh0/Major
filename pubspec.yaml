@@ -17,13 +17,9 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   animated_switcher: ^1.0.1
-
   introduction_screen: ^3.1.14
-
   smooth_page_indicator: ^1.2.0+3
-
   curved_navigation_bar: ^1.0.6 
-
   blurrycontainer: 2.1.0
 
   fl_chart: ^0.69.0
