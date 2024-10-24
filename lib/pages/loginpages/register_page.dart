@@ -207,7 +207,7 @@ class RegisterPage extends StatelessWidget {
                               TextButton(
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(
-                                    builder: (context)=> const LoginPage()),);
+                                    builder: (context)=>LoginPage()),);
                                 },
                                 child: const Text(
                                   'Sign Up',

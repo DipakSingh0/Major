@@ -74,7 +74,7 @@ class _IntroScreenState extends State<IntroScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const LoginPage()),
+                                    builder: (context) =>LoginPage()),
                               );
                             },
                             child: const Text(

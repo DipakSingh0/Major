@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final themeState = ThemeWidget.of(context);
-
     var myDrawer = Container(
       color: Theme.of(context).drawerTheme.backgroundColor,
       child: Column(
@@ -144,7 +143,7 @@ class _HomePageState extends State<HomePage>
             title:
                 const Text('Settings', style: TextStyle(color: Colors.white)),
             onTap: () {
-              // print("tapped!!");
+              //print("tapped !!")
             },
           ),
         ],
@@ -324,20 +323,8 @@ class _HomePageState extends State<HomePage>
     );
 
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor:
-            Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
-        animationDuration: const Duration(milliseconds: 300),
-        onTap: (index) {
-          // print(index);
-        },
-        items: const [
-          Icon(Icons.search_outlined),
-          Icon(Icons.home_outlined),
-          Icon(Icons.settings_outlined),
-        ],
-      ),
-      appBar: AppBar(
+      bottomNavigationBar: MyCurvedBottomNavBar(),
+       appBar: AppBar(
         title: const Text('Home Page'),
         leading: IconButton(
           icon: AnimatedIcon(
@@ -366,7 +353,29 @@ class _HomePageState extends State<HomePage>
             ],
           );
         },
-      ),
+      )
     );
+  }
+}
+
+
+class MyCurvedBottomNavBar extends StatelessWidget {
+  const MyCurvedBottomNavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  CurvedNavigationBar(
+        backgroundColor:
+            Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
+        animationDuration: const Duration(milliseconds: 300),
+        onTap: (index) {
+          // print(index);
+        },
+        items: const [
+          Icon(Icons.search_outlined),
+          Icon(Icons.home_outlined),
+          Icon(Icons.settings_outlined),
+        ],
+      );
   }
 }

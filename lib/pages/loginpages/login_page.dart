@@ -1,9 +1,87 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/home_page.dart';
 import 'package:projet/pages/loginpages/register_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  //text controllers
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  // final _hospitalIdController = TextEditingController();
+
+  // Future signIn() async {
+  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //     email: _emailController.text.trim(),
+  //     password: _passwordController.text.trim(),
+  //     // hospitalId : _hospitalIdController.text.trim(),
+  //   );
+  // }
+
+  // @override
+  // void dispose() {
+  //   _emailController.dispose();
+  //   _passwordController.dispose();
+  //   super.dispose();
+  // }
+
+    Future<void> signIn() async {
+    try {
+      // sign in
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+
+      // If sign in is successful, navigate to HomePage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    } 
+      // else sho the error output on loginpage
+        on FirebaseAuthException catch (e) {
+       print('FirebaseAuthException: ${e.code}');
+      // Handle different error types
+      String message;
+       switch (e.code) {
+        case 'user-not-found':
+          message = 'This email is not beign registered';
+          break;
+        case 'wrong-password':
+          message = 'Incorrect password';
+          break;
+        case 'invalid-email':
+          message = 'Incorrect Email';
+          break;
+        default:
+          message = 'An error occurred. Please try again.';
+      }
+
+
+      // Show error message using SnackBar
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +93,10 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 0.0, 
-            left: 0.0, 
-            right: 0.0, 
-            bottom: 0.0, 
+            top: 0.0,
+            left: 0.0,
+            right: 0.0,
+            bottom: 0.0,
             child: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -46,7 +124,7 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children: [
                         // hospital id
-                         TextField(
+                        TextField(
                           decoration: InputDecoration(
                             fillColor: Colors.grey.shade100,
                             filled: true,
@@ -58,9 +136,9 @@ class LoginPage extends StatelessWidget {
                         ),
                         SizedBox(height: screenSize.height * 0.02),
 
-
                         //Email textfield
                         TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                             fillColor: Colors.grey.shade100,
                             filled: true,
@@ -74,6 +152,7 @@ class LoginPage extends StatelessWidget {
 
                         //Password Textfield
                         TextField(
+                          controller: _passwordController,
                           decoration: InputDecoration(
                             fillColor: Colors.grey.shade100,
                             filled: true,
@@ -85,6 +164,7 @@ class LoginPage extends StatelessWidget {
                           obscureText: true, // Hiding the password
                         ),
                         SizedBox(height: screenSize.height * 0.03),
+                       
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -100,22 +180,34 @@ class LoginPage extends StatelessWidget {
                               backgroundColor: const Color(0xff4c505b),
                               child: IconButton(
                                 color: Colors.white,
-                                // onPressed: () {
-                                //   Navigator.pushNamed(context, '/AuthenticationPage');
-                                // },
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const HomePage()),
-                                  );
-                                },
-
+                                onPressed: signIn,
                                 icon: const Icon(Icons.arrow_forward),
                               ),
                             )
                           ],
                         ),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        //   child: GestureDetector(
+                        //     onTap: signIn,
+                        //     child: Container(
+                        //         padding: EdgeInsets.all(20),
+                        //         decoration: BoxDecoration(
+                        //           color: Colors.blue,
+                        //           borderRadius: BorderRadius.circular(12),
+                        //         ),
+                        //         child: Center(
+                        //           child: Text('Sign In',
+                        //               style: TextStyle(
+                        //                 color: Colors.white,
+                        //                 fontWeight: FontWeight.bold,
+                        //                 fontSize: 22,
+                        //               )),
+                        //         )),
+                        //   ),
+                        // ),
+
                         SizedBox(height: screenSize.height * 0.04),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
