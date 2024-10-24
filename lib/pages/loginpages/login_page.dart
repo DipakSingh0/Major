@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/home_page.dart';
+import 'package:projet/pages/loginpages/password_verification.dart';
 import 'package:projet/pages/loginpages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -16,20 +17,9 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
   // final _hospitalIdController = TextEditingController();
 
-  // Future signIn() async {
-  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
-  //     email: _emailController.text.trim(),
-  //     password: _passwordController.text.trim(),
-  //     // hospitalId : _hospitalIdController.text.trim(),
-  //   );
-  // }
 
-  // @override
-  // void dispose() {
-  //   _emailController.dispose();
-  //   _passwordController.dispose();
-  //   super.dispose();
-  // }
+    //fetching additonal detail hospitalId and registerNumber for privacy
+    
 
     Future<void> signIn() async {
     try {
@@ -187,26 +177,6 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
 
-                        // Padding(
-                        //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        //   child: GestureDetector(
-                        //     onTap: signIn,
-                        //     child: Container(
-                        //         padding: EdgeInsets.all(20),
-                        //         decoration: BoxDecoration(
-                        //           color: Colors.blue,
-                        //           borderRadius: BorderRadius.circular(12),
-                        //         ),
-                        //         child: Center(
-                        //           child: Text('Sign In',
-                        //               style: TextStyle(
-                        //                 color: Colors.white,
-                        //                 fontWeight: FontWeight.bold,
-                        //                 fontSize: 22,
-                        //               )),
-                        //         )),
-                        //   ),
-                        // ),
 
                         SizedBox(height: screenSize.height * 0.04),
                         Row(
@@ -232,7 +202,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             //  const SizedBox(height:40, width: 40, ),
                             TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
+                                  );
+                                },
                                 child: const Text(
                                   'Forgot Password',
                                   style: TextStyle(

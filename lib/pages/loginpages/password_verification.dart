@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/loginpages/verification_code.dart';
 
-class RegisterVerificationPage extends StatelessWidget {
-  const RegisterVerificationPage({super.key});
+class ForgotPasswordPage extends StatelessWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class RegisterVerificationPage extends StatelessWidget {
                 backgroundColor: Colors.transparent,
                 appBar: AppBar(
                 backgroundColor: Colors.transparent,
-                  title: const Text('Register' ,  
+                  title: const Text('Reset Password' ,  
                   style: TextStyle(
                     color: Colors.white, 
                     fontSize: 30  
@@ -56,7 +56,7 @@ class RegisterVerificationPage extends StatelessWidget {
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
-                              hintText: 'Phone Number',
+                              hintText: 'Email',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -82,7 +82,7 @@ class RegisterVerificationPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                             ),
+                  ),
                  ),
               ])
               )

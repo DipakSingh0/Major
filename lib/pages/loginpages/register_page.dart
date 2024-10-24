@@ -1,27 +1,118 @@
+// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/pages/loginpages/login_page.dart';
-import 'package:projet/pages/loginpages/register_verifn.dart';
+import 'package:projet/pages/loginpages/password_verification.dart';
+import 'package:projet/pages/loginpages/verification_code.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({
+    super.key,
+  });
 
-  const RegisterPage({super.key});
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final _hospitalIdController = TextEditingController();
+  final _hospitalNameController = TextEditingController();
+  final _registrationNumberController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _contactPersonController = TextEditingController();
+  final _phoneNumberController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
+// Future<void>  signUp() async {
+
+//   //pasword
+//   await FirebaseAuth.instance.createUserWithEmailAndPassword(
+//     email: _emailController.text.trim(),
+//     password: _passwordController.text.trim(),
+//   );
+// }
+
   
+  Future<void> signUp() async {
+    // Check if passwords dont match
+    if (_passwordController.text.trim() !=
+        _confirmPasswordController.text.trim()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Passwords do not match'),
+          duration: Duration(seconds: 3),
+        ),
+      );
+      return;
+    }
+
+    try {
+      // Create a new user
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+    SnackBar(content: Text('Registered Successfully'),);
+      // Navigate to the HomePage after successful sign up
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
+    } on FirebaseAuthException catch (e) {
+      // Handle Firebase sign-up errors
+      String message;
+      switch (e.code) {
+        case 'email-already-in-use':
+          message = 'This email is already registered';
+          break;
+        case 'weak-password':
+          message = 'Password should be at least 6 characters';
+          break;
+        case 'invalid-email':
+          message = 'Invalid email format';
+          break;
+        default:
+          message = 'An error occurred. Please try again.';
+      }
+
+      // Show error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _hospitalIdController.dispose();
+    _hospitalNameController.dispose();
+    _registrationNumberController.dispose();
+    _contactPersonController.dispose();
+    _phoneNumberController.dispose();
+    _addressController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }  
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
-    // final textColor = Colors.white;
-    //  double aspectRatio = 16 / 9; // width / height
     return Scaffold(
       resizeToAvoidBottomInset: false,
-
       body: Stack(
         children: [
           Positioned(
-              top: 0.0,
+            top: 0.0,
             left: 0.0,
             right: 0.0,
-            bottom: 0.0, 
+            bottom: 0.0,
             child: Container(
               width: screenSize.width,
               height: screenSize.height,
@@ -37,24 +128,26 @@ class RegisterPage extends StatelessWidget {
                   centerTitle: true,
                   backgroundColor: Colors.transparent,
                   title: const Text(
-                    'Create Account' , 
+                    'Create Account',
                     style: TextStyle(
-                      fontSize: 30 , 
+                      fontSize: 30,
                       color: Colors.black87,
-                    ),),
+                    ),
+                  ),
                 ),
                 body: Stack(
                   children: [
                     SingleChildScrollView(
                       padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.05, 
-                      left: 35,
-                      right: 35,
+                        top: MediaQuery.of(context).size.height * 0.05,
+                        left: 35,
+                        right: 35,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextField(
+                            controller: _hospitalIdController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -64,10 +157,9 @@ class RegisterPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: screenSize.height* 0.01),
-                          
-            
+                          SizedBox(height: screenSize.height * 0.01),
                           TextField(
+                            controller: _hospitalNameController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -76,11 +168,11 @@ class RegisterPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            
                           ),
-                          SizedBox(height: screenSize.height* 0.01),
-            
+                          
+                          SizedBox(height: screenSize.height * 0.01),
                           TextField(
+                            controller: _registrationNumberController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -92,8 +184,8 @@ class RegisterPage extends StatelessWidget {
                             obscureText: false,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _emailController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -102,11 +194,11 @@ class RegisterPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            obscureText: false, 
+                            obscureText: false,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _contactPersonController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -118,8 +210,8 @@ class RegisterPage extends StatelessWidget {
                             obscureText: false,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _phoneNumberController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -131,8 +223,8 @@ class RegisterPage extends StatelessWidget {
                             obscureText: false,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _addressController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -144,12 +236,12 @@ class RegisterPage extends StatelessWidget {
                             obscureText: false,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _passwordController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
-                              hintText: 'Password', 
+                              hintText: 'Password',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -157,8 +249,8 @@ class RegisterPage extends StatelessWidget {
                             obscureText: true,
                           ),
                           SizedBox(height: screenSize.height * 0.01),
-            
                           TextField(
+                            controller: _confirmPasswordController,
                             decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
@@ -170,7 +262,6 @@ class RegisterPage extends StatelessWidget {
                             obscureText: true,
                           ),
                           SizedBox(height: screenSize.height * 0.02),
-            
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -186,15 +277,9 @@ class RegisterPage extends StatelessWidget {
                                 backgroundColor: const Color(0xff4c505b),
                                 child: IconButton(
                                   color: Colors.white,
-                                  
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const RegisterVerificationPage()),
-                                    );
+                                    signUp();
                                   },
-                
                                   icon: const Icon(Icons.arrow_forward),
                                 ),
                               )
@@ -205,12 +290,16 @@ class RegisterPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextButton(
-                                onPressed: () {
+                                onPressed:
+                                //  signUp,
+                                () {
                                   Navigator.push(context, MaterialPageRoute(
-                                    builder: (context)=>LoginPage()),);
+                                    builder: (context)=> LoginPage()
+                                    ),
+                                  );
                                 },
                                 child: const Text(
-                                  'Sign Up',
+                                  'Sign In',
                                   style: TextStyle(
                                     decoration: TextDecoration.underline,
                                     fontSize: 18,
@@ -218,9 +307,10 @@ class RegisterPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              
-                               TextButton(
-                                  onPressed: () {},
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPasswordPage()));
+                                  },
                                   child: const Text(
                                     'Forgot Password',
                                     style: TextStyle(
