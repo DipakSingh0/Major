@@ -58,6 +58,10 @@ flutter:
     - lib/assets/register2.png
     - lib/assets/admin.jpg
 
+    - lib/assets/heart.png
+    - lib/assets/heart1.png
+
+
 
 
 

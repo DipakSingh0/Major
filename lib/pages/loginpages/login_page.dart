@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/home_page.dart';
+import 'package:projet/pages/insideapp/home_page.dart';
 import 'package:projet/pages/loginpages/password_verification.dart';
 import 'package:projet/pages/loginpages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';

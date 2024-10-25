@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
-import 'pages/loginpages/login_page.dart';
+// import 'pages/loginpages/login_page.dart';
+import 'pages/insideapp/home_page.dart';
 import 'widgets/theme_widget.dart';
 
 void main() async{
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: ThemeWidget(
         debugShowCheckedModeBanner: false,
-         child: LoginPage(),
+         child: HomePage(),
       ),
     );
   }

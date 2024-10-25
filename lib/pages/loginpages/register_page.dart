@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/pages/loginpages/login_page.dart';
 import 'package:projet/pages/loginpages/password_verification.dart';
-import 'package:projet/pages/loginpages/verification_code.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({
@@ -25,15 +24,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
-// Future<void>  signUp() async {
-
-//   //pasword
-//   await FirebaseAuth.instance.createUserWithEmailAndPassword(
-//     email: _emailController.text.trim(),
-//     password: _passwordController.text.trim(),
-//   );
-// }
-
   
   Future<void> signUp() async {
     // Check if passwords dont match
@@ -54,7 +44,6 @@ class _RegisterPageState extends State<RegisterPage> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
-    SnackBar(content: Text('Registered Successfully'),);
       // Navigate to the HomePage after successful sign up
       Navigator.pushReplacement(
         context,
