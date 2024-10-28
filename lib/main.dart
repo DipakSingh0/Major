@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
-// import 'pages/loginpages/login_page.dart';
 import 'pages/insideapp/home_page.dart';
 import 'widgets/theme_widget.dart';
 
@@ -19,12 +18,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ThemeWidget(
+    return const ThemeWidget(
         debugShowCheckedModeBanner: false,
          child: HomePage(),
-      ),
-    );
+      );
   }
 }
 

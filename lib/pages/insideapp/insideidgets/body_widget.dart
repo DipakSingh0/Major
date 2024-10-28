@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet/users_data/user1.dart';
+// import 'package:projet/widgets/theme_widget.dart';
 
 class MyBodyWidget extends StatefulWidget {
   const MyBodyWidget({super.key});
@@ -10,14 +11,15 @@ class MyBodyWidget extends StatefulWidget {
 
 class _MyBodyWidgetState extends State<MyBodyWidget> {
   final List<Widget> _containers = [];
+    // final themeState = ThemeWidget.of(context);
 
-  // Function to create a new Container widget
+  
   Widget _buildContainer(int index) {
     return GestureDetector(
-      // open up form for new child
+// ......................open up form for new child......................//
       onTap: () => _showAddDialog(),
 
-      // To delete
+// ......................To delete......................//
       onLongPress: () => _showDeleteDialog(index),
 
       child: Padding(
@@ -32,11 +34,13 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
             width: 380,
             margin: const EdgeInsets.only(top: 16.0),
             decoration: BoxDecoration(
-                color: Colors.white,
+                  color: Color(0xFFF4F4F6),
+                // color: Theme.of(context).cardTheme.color,
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(
                   color: Colors.grey,
-                  width: 1,
+                  // color: Color(0xFFF4F4F6),
+                  width: 0.2,
                 )),
             child: const Padding(
               padding: EdgeInsets.only(left: 14.0, top: 14.0),
@@ -54,20 +58,21 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
     );
   }
 
-  // Add function
+  //................. Add function.......................//
   void _addContainer() {
     setState(() {
       _containers.add(_buildContainer(_containers.length));
     });
   }
 
-  // Delete function
+  // ...............Delete function....................//
   void _deleteContainer(int index) {
     setState(() {
       _containers.removeAt(index); // Remove container by index
     });
   }
 
+  //........ this will pop up delet dialog box............//
   void _showDeleteDialog(int index) {
     showDialog(
       context: context,
@@ -94,7 +99,7 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
     );
   }
 
-  // The Add Dialog does not need an index parameter
+  // ..............The Add Dialog does not need an index parameter.............//
   void _showAddDialog() {
     showDialog(
         context: context,
@@ -115,6 +120,7 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                       ),
                     ),
                   ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
                   TextField(
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
@@ -125,6 +131,8 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                       ),
                     ),
                   ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+
                   TextField(
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
@@ -135,6 +143,8 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                       ),
                     ),
                   ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+
                   TextField(
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
@@ -145,6 +155,8 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                       ),
                     ),
                   ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+
                   TextField(
                     decoration: InputDecoration(
                       fillColor: Colors.grey.shade100,
@@ -155,6 +167,8 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                       ),
                     ),
                   ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+
                 ],
               ),
             ),

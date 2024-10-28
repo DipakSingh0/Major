@@ -67,29 +67,29 @@ class MyDrawerWidget extends StatelessWidget {
                         },
                       ),
                       ListTile(
-                        leading: const Icon(Icons.circle, color: Colors.red),
-                        title: const Text('Red'),
+                        leading: const Icon(Icons.circle, color: Colors.brown),
+                        title: const Text('light'),
                         onTap: () {
-                          themeState?.switchTheme(ThemeWidget.redTheme);
+                          themeState?.switchTheme(ThemeWidget.lightTheme);
                           Navigator.of(context).pop();
                         },
                       ),
-                      ListTile(
-                        leading: const Icon(Icons.circle, color: Colors.orange),
-                        title: const Text('Orange'),
-                        onTap: () {
-                          themeState?.switchTheme(ThemeWidget.orangeTheme);
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.circle, color: Colors.purple),
-                        title: const Text('Purple'),
-                        onTap: () {
-                          themeState?.switchTheme(ThemeWidget.purpleTheme);
-                          Navigator.of(context).pop();
-                        },
-                      ),
+                      // ListTile(
+                      //   leading: const Icon(Icons.circle, color: Colors.orange),
+                      //   title: const Text('Orange'),
+                      //   onTap: () {
+                      //     themeState?.switchTheme(ThemeWidget.orangeTheme);
+                      //     Navigator.of(context).pop();
+                      //   },
+                      // ),
+                      // ListTile(
+                      //   leading: const Icon(Icons.circle, color: Colors.purple),
+                      //   title: const Text('Purple'),
+                      //   onTap: () {
+                      //     themeState?.switchTheme(ThemeWidget.purpleTheme);
+                      //     Navigator.of(context).pop();
+                      //   },
+                      // ),
                       ListTile(
                         leading: const Icon(Icons.circle, color: Colors.black),
                         title: const Text('Black'),

@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:projet/pages/insideapp/insideidgets/my_drawer.dart';
-import 'insideidgets/my_body_widget.dart';
+import 'package:projet/pages/insideapp/insideidgets/drawer.dart';
+import 'insideidgets/body_widget.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage>
   final double maxSlide = 225.0;
   late AnimationController _animationController;
 
-  // var screensize = MediaQuery.of(context).size ;
+  // var ScreenSize = MediaQuery.of(context).size ;
 
   @override
   void initState() {
