@@ -37,13 +37,6 @@ class ThemeWidget extends StatefulWidget {
       backgroundColor: Colors.blue,
     ),
 
-    // cardTheme: const CardTheme(
-    //   color: Colors.blue, // Set your default color for containers here
-    // ),
-    // colorScheme: ColorScheme.fromSwatch().copyWith(
-    //   secondary: Colors
-    //       .blueAccent, // Sets an accent color for any widgets using color schemes
-    // ),
   );
 
   static final ThemeData lightTheme = ThemeData(
@@ -59,13 +52,7 @@ class ThemeWidget extends StatefulWidget {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.blueGrey,
     ),
-    //  cardTheme: const CardTheme(
-    //   color: Colors.blueGrey, // Set your default color for containers here
-    // ),
-    // colorScheme: ColorScheme.fromSwatch().copyWith(
-    //   secondary: Colors
-    //       .blueGrey, // Sets an accent color for any widgets using color schemes
-    // ),
+
     
   );
 
@@ -98,32 +85,9 @@ class ThemeWidget extends StatefulWidget {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
     ),
-    //  cardTheme: const CardTheme(
-    //   color: Colors.black, // Set your default color for containers here
-    // ),
-    // colorScheme: ColorScheme.fromSwatch().copyWith(
-    //   secondary: Colors
-    //       .black, // Sets an accent color for any widgets using color schemes
-    // ),
 
     
   );
-
-  // static final ThemeData purpleTheme = ThemeData(
-  //   primaryColor: Colors.purple,
-  //   scaffoldBackgroundColor: Colors.white,
-  //   appBarTheme: const AppBarTheme(
-  //     backgroundColor: Colors.purple,
-  //     foregroundColor: Colors.white,
-  //   ),
-  //   drawerTheme: const DrawerThemeData(
-  //     backgroundColor: Colors.purple,
-  //   ),
-  //   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-  //     backgroundColor: Colors.purple,
-  //   ),
-    
-  // );
 }
 
 class _ThemeWidgetState extends State<ThemeWidget> {

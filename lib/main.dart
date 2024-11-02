@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
-import 'pages/insideapp/home_page.dart';
+import 'pages/home/home_page.dart';
 import 'widgets/theme_widget.dart';
 
 void main() async{
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ThemeWidget(
+    return ThemeWidget(
         debugShowCheckedModeBanner: false,
          child: HomePage(),
       );

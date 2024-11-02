@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:projet/users_data/bar_chart.dart';
 import 'package:projet/users_data/linechart.dart';
 
-import 'max_min_chart.dart';
+import '../../users_data/max_min_chart.dart';
 
 class User1 extends StatelessWidget {
   const User1({super.key});
