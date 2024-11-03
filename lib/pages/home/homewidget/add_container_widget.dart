@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dialogbox_widget.dart';
-import 'package:projet/pages/home/user1.dart';
+import 'package:projet/pages/home/pages/user1.dart';
 
 class AddContainerWidget extends StatefulWidget {
   const AddContainerWidget({super.key});
