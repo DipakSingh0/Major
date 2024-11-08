@@ -5,10 +5,12 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("notifications"),
-      )
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("notifications"),
+        )
+      ),
     );
   }
 }

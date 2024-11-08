@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+
+/*
+colors of Graphs donot modify this page
+*/
+
 class AppColors {
   static const Color primary = contentColorCyan;
   static const Color menuBackground = Color(0xFF090912);

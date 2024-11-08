@@ -1,9 +1,6 @@
-
-// import 'package:fl_chart_app/presentation/resources/app_resources.dart';
-// import 'package:fl_chart_app/util/extensions/color_extensions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:projet/users_data_graphs/app_colors.dart';
+import 'package:projet/pages/userpage/users_data_graphs/app_colors.dart';
 
 class _BarChart extends StatelessWidget {
   const _BarChart();

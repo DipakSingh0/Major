@@ -9,16 +9,18 @@ class IntroPage3 extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
     
        double aspectRatio = 16 / 9; 
-       return Container(
-        width: screenSize.width,
-        height: screenSize.height /aspectRatio,
-        // height: screenSize.height,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('lib/assets/intro3.jpeg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
+       return SafeArea(
+         child: Container(
+          width: screenSize.width,
+          height: screenSize.height /aspectRatio,
+          // height: screenSize.height,
+               decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('lib/assets/intro3.jpeg'),
+            fit: BoxFit.cover,
+          ),
+               ),
+             ),
+       );
   }
 }

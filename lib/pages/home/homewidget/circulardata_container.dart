@@ -13,15 +13,15 @@ class CirculardataContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var ScreenWidth = MediaQuery.of(context).size.width;
-    var ScreenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
 
     return Stack(
       children: [
         Container(
           color: Colors.grey[200],
-           height: ScreenHeight / 6,
-          width: ScreenWidth / 2.7,
+           height: screenHeight / 6,
+          width: screenWidth / 2.7,
           child: AspectRatio(
             aspectRatio: 1.0,
             child: AnimatedProgressBar(

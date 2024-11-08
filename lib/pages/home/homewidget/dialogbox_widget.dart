@@ -7,7 +7,13 @@ class DialogBoxWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Add new child'),
+          title: const Text('Add new child' , style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                fontFamily: "poppins",
+                letterSpacing: 1.5,
+                color: Colors.black,
+              )),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -76,7 +82,7 @@ class DialogBoxWidget {
   static Widget _buildTextField(String hintText) {
     return TextField(
       decoration: InputDecoration(
-        fillColor: Colors.grey.shade100,
+        fillColor: Colors.grey.shade300,
         filled: true,
         hintText: hintText,
         border: OutlineInputBorder(

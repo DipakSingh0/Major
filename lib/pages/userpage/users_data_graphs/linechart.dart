@@ -1,7 +1,6 @@
-// import 'package:fl_chart_app/presentation/resources/app_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:projet/users_data_graphs/app_colors.dart';
+import 'package:projet/pages/userpage/users_data_graphs/app_colors.dart';
 
 class LineChartSample2 extends StatefulWidget {
   const LineChartSample2({super.key});
@@ -16,6 +15,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     AppColors.contentColorBlue,
   ];
 
+
   bool showAvg = false;
 
   @override
@@ -26,10 +26,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
           aspectRatio: 1.70,
           child: Padding(
             padding: const EdgeInsets.only(
-              right: 12,
-              left: 12,
-              top: 24,
-              bottom: 10,
+              right: 4,
+              left: 4,
+              top: 8,
+              bottom: 8,
             ),
             child: LineChart(
               showAvg ? avgData() : mainData(),
@@ -38,22 +38,24 @@ class _LineChartSample2State extends State<LineChartSample2> {
         ),
         SizedBox(
           width: 80,
-          height: 35,
+          height: 40,
           child: TextButton(
+            
             onPressed: () {
               setState(() {
                 showAvg = !showAvg;
               });
             },
             child: Text(
-              'avg',
+              'average',
               style: TextStyle(
-                fontSize: 12,
-                color: showAvg ? Colors.white.withOpacity(0.5) : Colors.white,
+                fontSize: 20,
+                color: showAvg ? Colors.blue.withOpacity(0.5) : Colors.blue,
               ),
             ),
           ),
         ),
+        // SizedBox(height: 15),
       ],
     );
   }

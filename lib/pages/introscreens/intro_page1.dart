@@ -11,16 +11,18 @@ class IntroPage1 extends StatelessWidget {
      // Getting the screen size for flexible Ui
     Size screenSize = MediaQuery.of(context).size;
     double aspectRatio = 16 / 9; // width / height
-    return  Container(
-      width: screenSize.width,
-      height: screenSize.width / aspectRatio, 
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('lib/assets/intro1.jpeg'),
-        fit: BoxFit.cover,
+    return  SafeArea(
+      child: Container(
+        width: screenSize.width,
+        height: screenSize.width / aspectRatio, 
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage('lib/assets/intro1.jpeg'),
+          fit: BoxFit.cover,
+          ),
+          
         ),
-        
+        // color: Colors.blue,
       ),
-      // color: Colors.blue,
     );
   }
 }
