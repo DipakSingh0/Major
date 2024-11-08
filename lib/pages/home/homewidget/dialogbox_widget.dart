@@ -7,17 +7,23 @@ class DialogBoxWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Add new child' , style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w500,
-                fontFamily: "poppins",
-                letterSpacing: 1.5,
-                color: Colors.black,
-              )),
+          title: Align(
+            alignment: Alignment.center ,
+            child: const Text('Add new child' , style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "poppins",
+                  letterSpacing: 1.5,
+                  color: Colors.black,
+                ), 
+                ),
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                 _buildTextField('Ward Number'),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.005),
                 _buildTextField('Bed Number'),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.005),
                 _buildTextField('Admitted Date'),

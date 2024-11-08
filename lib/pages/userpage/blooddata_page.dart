@@ -57,8 +57,8 @@ class BlooddataPage extends StatelessWidget {
                     children: [
                       UserdataContainer(
                           parameterName: "RBC Count",
-                          value: "128",
-                          measure: "/min"),
+                          value: "4.0",
+                          measure: "M/mm³"),
 
                       // CirculardataContainer(
                       // parameterName: "SpO2",
@@ -105,12 +105,12 @@ class BlooddataPage extends StatelessWidget {
                     children: [
                       UserdataContainer(
                           parameterName: "WBC Count",
-                          value: "98.6",
-                          measure: ""),
+                          value: "10,000",
+                          measure: "/mm³"),
                       UserdataContainer(
                           parameterName: "Platelets",
-                          value: "75",
-                          measure: "/"),
+                          value: "10,000",
+                          measure: "/mm³"),
                     ],
                   ),
                   SizedBox(height: screenHeight * 0.015),
@@ -120,12 +120,12 @@ class BlooddataPage extends StatelessWidget {
                     children: [
                       UserdataContainer(
                           parameterName: "Haemoglobin",
-                          value: "0",
-                          measure: "0"),
+                          value: "13.80",
+                          measure: "g/dL"),
                       UserdataContainer(
                         parameterName: "Neutrophil",
-                        value: "A+",
-                        measure: "",
+                        value: "12000",
+                        measure: "/mm³",
                       ),
                       // Divider(),
                     ],
@@ -136,11 +136,13 @@ class BlooddataPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
-                          parameterName: "Esonophil", value: "0", measure: "0"),
+                          parameterName: "Esonophil", 
+                          value: "300", 
+                          measure: "/mm³"),
                       UserdataContainer(
                         parameterName: "MCV",
-                        value: "A+",
-                        measure: "",
+                        value: "110",
+                        measure: "fL",
                       ),
                       // Divider(),
                     ],

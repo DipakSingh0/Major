@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
 import 'package:projet/pages/home/notification_page.dart';
+import 'package:projet/pages/introscreens/introduction_screen.dart';
 import 'package:projet/widgets/theme_widget.dart';
 import 'firebase_api.dart';
 import 'pages/home/home_page.dart';
@@ -10,7 +11,7 @@ import 'pages/home/home_page.dart';
 // import 'widgets/theme_widget.dart';
 
 
-  final navigatorKey = GlobalKey<NavigatorState>();
+final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async{
   BindingBase.debugZoneErrorsAreFatal = true;  // hides unnecessary O/P at terminal 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme:lightTheme,
-         home: HomePage(),
+         home: IntroScreen(),
          navigatorKey: navigatorKey,
          routes: {
           '/notification_page': (context) => const NotificationPage(),
