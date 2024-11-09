@@ -8,12 +8,14 @@ class UserdataSmallContainer extends StatelessWidget {
   final String parameterName;
   final String value;
   final String measure;
+  final Icon icon;
 
   const UserdataSmallContainer({
     super.key,
     required this.parameterName,
     required this.value,
     required this.measure,
+    required this.icon,
   });
 
   @override
@@ -35,41 +37,67 @@ class UserdataSmallContainer extends StatelessWidget {
             final availableWidth = constraints.maxWidth;
 
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    parameterName,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: availableWidth * 0.1522,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15.0, left: 2),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: SizedBox(
+                            width: availableWidth * 0.20,
+                            child: icon,
+                          ),
+                        ),
+                        SizedBox(
+                          width: availableWidth * 0.05,
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Text(
+                            parameterName,
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: availableWidth * 0.114,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        value,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: availableHeight *
-                              0.21, // Adjust font size based on height
-                          fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          value,
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: availableHeight *
+                                0.21, // Adjust font size based on height
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Text(
-                        measure,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: availableHeight *
-                              0.15, // Adjust font size based on height
-                          fontWeight: FontWeight.bold,
+                        SizedBox(
+                          width: availableWidth * 0.04,
                         ),
-                      ),
-                    ],
+                        Text(
+                          measure,
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: availableHeight *
+                                0.18, // Adjust font size based on height
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

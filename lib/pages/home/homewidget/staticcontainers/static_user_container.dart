@@ -55,9 +55,7 @@ class StaticUserContainer extends StatelessWidget {
                     child: Align(
                         alignment: Alignment.topCenter,
                         child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            // Image.asset('lib/assets/admin.jpg' , fit: BoxFit.cover),
                             SizedBox(
                               height: 8,
                             ),
@@ -117,7 +115,8 @@ class StaticUserContainer extends StatelessWidget {
                             ),
 
                           ],
-                        )),
+                        )
+                        ),
                   ),
                 ),
                 Expanded(
@@ -131,18 +130,35 @@ class StaticUserContainer extends StatelessWidget {
                       mainAxisSpacing: 6.0,
                       children: [
                         UserdataSmallContainer(
+                            icon: Icon(Icons.heart_broken,
+                                color: Colors.blue, size: 25),
                             parameterName: "Heart Rate",
                             value: "120",
                             measure: "/min"),
                         UserdataSmallContainer(
+                           icon: Icon(
+                              Icons.air,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
                             parameterName: "Respiration",
                             value: "12",
                             measure: "/min"),
                         UserdataSmallContainer(
+                          icon: Icon(
+                              Icons.thermostat,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
                             parameterName: "Temperature",
                             value: "120",
                             measure: "°F"),
                         UserdataSmallContainer(
+                            icon: Icon(
+                              Icons.bloodtype,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
                             parameterName: "SpO2", value: "12", measure: "%"),
                       ],
                     ),

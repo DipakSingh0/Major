@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/home/homewidget/staticcontainers/static_user_container.dart';
-import 'package:projet/widgets/drawer_widget.dart';
+import 'package:projet/pages/profile/profile_page.dart';
+import 'package:projet/widgets/my_drawer.dart';
 import '../../widgets/my_botom_bar_widget.dart';
 import 'homewidget/dialogbox_widget.dart';
 import '../userpage/user.dart';
@@ -16,6 +17,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _containers = [];
 
+  var currentPage = DrawerSections.homepage;
+
   @override
   Widget build(BuildContext context) {
     // final theme = Theme.of(context);
@@ -24,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
     return SafeArea(
       child: Scaffold(
-        drawer: MyDrawerWidget(),
+        drawer: MyDrawer(),
         bottomNavigationBar: MyBottomBarWidget(),
         appBar: AppBar(
           toolbarHeight: 75,
@@ -53,12 +56,20 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10.0),
-              child: Icon(Icons.notifications, color: Colors.white, size: 32),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Icon(Icons.person, color: Colors.white, size: 32),
+              ),
             ),
           ],
         ),
+
+
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -69,20 +80,29 @@ class _HomePageState extends State<HomePage> {
                 parentName: 'Avishek Kumar',
                 dobDate: '2060/01/01',
                 bedNumber: '18',
-                contactNumber: '9841419315',
-
+                contactNumber: '9841919333',
               ),
               StaticUserContainer(
                 // userName: 'hary',
                 childName: '',
                 parentName: '',
                 dobDate: '',
-                bedNumber: '', 
+                bedNumber: '',
+                contactNumber: '',
+              ),
+              StaticUserContainer(
+                // userName: 'hary',
+                childName: '',
+                parentName: '',
+                dobDate: '',
+                bedNumber: '',
                 contactNumber: '',
               ),
 
+
+//..............This is to create dynamic list of containers................//
               SizedBox(
-                height: 400,
+                height: 300,
                 child: ListView.builder(
                   itemCount: _containers.length,
                   itemBuilder: (context, index) {
@@ -159,8 +179,8 @@ class _HomePageState extends State<HomePage> {
                   flex: 3,
                   child: Center(
                     child: Align(
-                      alignment: Alignment.topCenter,
-                       child: Column(
+                        alignment: Alignment.topCenter,
+                        child: Column(
                           children: [
                             SizedBox(
                               height: 8,
@@ -226,8 +246,7 @@ class _HomePageState extends State<HomePage> {
                               height: 8,
                             ),
                           ],
-                        )
-                    ),
+                        )),
                   ),
                 ),
                 Expanded(
@@ -241,19 +260,38 @@ class _HomePageState extends State<HomePage> {
                       mainAxisSpacing: 6.0,
                       children: [
                         UserdataSmallContainer(
+                            icon: Icon(Icons.heart_broken,
+                                color: Colors.blue, size: 25),
                             parameterName: "Heart Rate",
                             value: "120",
                             measure: "/min"),
                         UserdataSmallContainer(
+                            icon: Icon(
+                              Icons.air,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
                             parameterName: "Respiration",
                             value: "12",
                             measure: "/min"),
                         UserdataSmallContainer(
+                            icon: Icon(
+                              Icons.thermostat,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
                             parameterName: "Temperature",
                             value: "120",
                             measure: "°F"),
                         UserdataSmallContainer(
-                            parameterName: "SpO2", value: "12", measure: "%"),
+                            icon: Icon(
+                              Icons.bloodtype,
+                              color: Colors.blue,
+                              size: 25,
+                            ),
+                            parameterName: "SpO2",
+                            value: "12",
+                            measure: "%"),
                       ],
                     ),
                   ),

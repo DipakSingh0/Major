@@ -56,6 +56,11 @@ class BlooddataPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       UserdataContainer(
+                          icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
                           parameterName: "RBC Count",
                           value: "4.0",
                           measure: "M/mm³"),
@@ -63,8 +68,7 @@ class BlooddataPage extends StatelessWidget {
                       // CirculardataContainer(
                       // parameterName: "SpO2",
                       // percentage: 0.55),
-                      SizedBox(
-                          width: screenWidth * 0.0005),
+                      SizedBox(width: screenWidth * 0.0005),
 
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -98,16 +102,26 @@ class BlooddataPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: screenHeight* 0.015),
+                  SizedBox(height: screenHeight * 0.015),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
+                         icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
                           parameterName: "WBC Count",
                           value: "10,000",
                           measure: "/mm³"),
                       UserdataContainer(
+                       icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
                           parameterName: "Platelets",
                           value: "10,000",
                           measure: "/mm³"),
@@ -119,10 +133,20 @@ class BlooddataPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
+                         icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
                           parameterName: "Haemoglobin",
                           value: "13.80",
                           measure: "g/dL"),
                       UserdataContainer(
+                       icon: Icon(
+                          Icons.bloodtype,
+                          color: Colors.white,
+                          size: 45,
+                        ),
                         parameterName: "Neutrophil",
                         value: "12000",
                         measure: "/mm³",
@@ -136,10 +160,20 @@ class BlooddataPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
-                          parameterName: "Esonophil", 
-                          value: "300", 
+                        icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
+                          parameterName: "Esonophil",
+                          value: "300",
                           measure: "/mm³"),
                       UserdataContainer(
+                       icon: Icon(
+                          Icons.bloodtype,
+                          color: Colors.white,
+                          size: 45,
+                        ),
                         parameterName: "MCV",
                         value: "110",
                         measure: "fL",

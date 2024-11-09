@@ -44,20 +44,21 @@ class User1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(height: screenHeight * 0.025),
-               
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
+                          icon: Icon(Icons.heart_broken,
+                              color: Colors.white, size: 45),
                           parameterName: "HeartRate",
                           // value: "128",
                           //.... dynamic heart rate to enable notificaion
                           value: heartRate.toString(),
 
                           //
-                          measure: "/min"),
+                          measure: "bpm"),
                       SizedBox(width: screenWidth * 0.0001),
-                    
                       CircularAnimatedWidget(),
                     ],
                   ),
@@ -67,11 +68,21 @@ class User1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
-                          parameterName: "Body Temperature",
+                          icon: Icon(
+                            Icons.thermostat,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          parameterName: "Temperature",
                           value: "98.6",
                           measure: "°F"),
                       UserdataContainer(
-                          parameterName: "Respiration Rate",
+                          icon: Icon(
+                            Icons.air,
+                            color: Colors.white,
+                            size: 45,
+                          ),
+                          parameterName: "Respiration",
                           value: "75",
                           measure: "/min"),
                     ],
@@ -82,17 +93,27 @@ class User1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
-                          parameterName: "Haemoglobin",
-                          value: "0",
-                          measure: "0"),
-                     GestureDetector(
+                          icon: Icon(
+                            Icons.favorite,
+                            color: Colors.white,
+                            size: 45,
+                          ),
+                          parameterName: "Hemoglobin",
+                          value: "13.80",
+                          measure: "g/dL"),
+                      GestureDetector(
                         onTap: () {
                           Navigator.push(
-                            context,
-                           MaterialPageRoute(builder: (context) => BlooddataPage())
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BlooddataPage()));
                         },
                         child: UserdataContainer(
+                          icon: Icon(
+                            Icons.bloodtype,
+                            color: Colors.white,
+                            size: 45,
+                          ),
                           parameterName: "Blood Data",
                           value: "A+",
                           measure: "",
@@ -189,9 +210,8 @@ class User1 extends StatelessWidget {
                         height: screenWidth * 0.6,
                         width: screenWidth * 0.9,
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20)
-                        ),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
                         child: BarChartSample3(),
                       ),
                       SizedBox(height: 10),

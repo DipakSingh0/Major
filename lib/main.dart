@@ -3,12 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
 import 'package:projet/pages/home/notification_page.dart';
-import 'package:projet/pages/introscreens/introduction_screen.dart';
 import 'package:projet/widgets/theme_widget.dart';
 import 'firebase_api.dart';
 import 'pages/home/home_page.dart';
-// import 'pages/introscreens/introduction_screen.dart';
-// import 'widgets/theme_widget.dart';
 
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -32,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme:lightTheme,
-         home: IntroScreen(),
+         home: HomePage(),
          navigatorKey: navigatorKey,
          routes: {
           '/notification_page': (context) => const NotificationPage(),

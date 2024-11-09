@@ -76,6 +76,11 @@ var lightTheme = ThemeData(
         color: lightLabelColor,
         fontWeight: FontWeight.w300,
       ),
+      // headingText : TextStyle(
+      //   fontFamily: "Poppins",
+      //   color: Colors.white, 
+      //   fontSize: 25, 
+      //   fontWeight: FontWeight.bold),
     ));
 
 var darkTheme = ThemeData(
