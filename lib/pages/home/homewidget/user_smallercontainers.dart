@@ -22,13 +22,14 @@ class UserdataSmallContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
+    var theme = Theme.of(context);
 
     return SafeArea(
       child: Container(
         height: screenHeight / 6,
         width: screenWidth / 5,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: theme.cardTheme.color?.withOpacity(0.6),
           borderRadius: BorderRadius.circular(20),
         ),
         child: LayoutBuilder(
@@ -60,13 +61,27 @@ class UserdataSmallContainer extends StatelessWidget {
                           flex: 3,
                           child: Text(
                             parameterName,
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: availableWidth * 0.114,
-                              fontWeight: FontWeight.w800,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(
+                                  fontSize: availableWidth *
+                                      0.113, // Adjust font size based on height
+                                  fontWeight: FontWeight.w800,
+                                ),
                           ),
                         ),
+                        // Expanded(
+                        //   flex: 3,
+                        //   child: Text(
+                        //     parameterName,
+                        //     style: TextStyle(
+                        //       color: theme.primaryColor,
+                        //       fontSize: availableWidth * 0.114,
+                        //       fontWeight: FontWeight.w800,
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -77,24 +92,26 @@ class UserdataSmallContainer extends StatelessWidget {
                       children: [
                         Text(
                           value,
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: availableHeight *
-                                0.21, // Adjust font size based on height
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.labelMedium?.copyWith(
+                                    fontSize: availableHeight *
+                                        0.21, // Adjust font size based on height
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
+                        // fontSize: availableHeight * 0.21,
+
                         SizedBox(
                           width: availableWidth * 0.04,
                         ),
                         Text(
                           measure,
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: availableHeight *
-                                0.18, // Adjust font size based on height
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.labelMedium?.copyWith(
+                                    fontSize: availableHeight *
+                                        0.18, // Adjust font size based on height
+                                    fontWeight: FontWeight.w400,
+                                  ),
                         ),
                       ],
                     ),

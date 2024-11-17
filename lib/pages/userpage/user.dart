@@ -9,6 +9,8 @@ import 'blooddata_page.dart';
 // import 'package:projet/pages/notifications/heartrate_controller.dart';
 
 class User1 extends StatelessWidget {
+  const User1({super.key});
+
   // final HeartRateNotificationController heartRateController =
   //     HeartRateNotificationController();
 
@@ -17,23 +19,19 @@ class User1 extends StatelessWidget {
     // var size = MediaQuery.of(context).size;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-
+    var theme = Theme.of(context);
     int heartRate = 10;
     // heartRateController.checkHeartRate(heartRate);
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: theme.scaffoldBackgroundColor,
         appBar: AppBar(
           toolbarHeight: 75,
-          title: const Text('Baby Data',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w500,
-                fontFamily: "poppins",
-                letterSpacing: 1.5,
-                color: Colors.white,
-              )),
+          title: Text(
+            'Baby Data',
+            style: theme.textTheme.displayLarge,
+          ),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -43,14 +41,14 @@ class User1 extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: screenHeight * 0.025),
+                  SizedBox(height: screenHeight * 0.020),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       UserdataContainer(
                           icon: Icon(Icons.heart_broken,
-                              color: Colors.white, size: 45),
+                              color: theme.iconTheme.color, size: 45),
                           parameterName: "HeartRate",
                           // value: "128",
                           //.... dynamic heart rate to enable notificaion
@@ -62,7 +60,7 @@ class User1 extends StatelessWidget {
                       CircularAnimatedWidget(),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: screenHeight * 0.015),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -70,7 +68,7 @@ class User1 extends StatelessWidget {
                       UserdataContainer(
                           icon: Icon(
                             Icons.thermostat,
-                            color: Colors.white,
+                            color: theme.iconTheme.color,
                             size: 50,
                           ),
                           parameterName: "Temperature",
@@ -79,7 +77,7 @@ class User1 extends StatelessWidget {
                       UserdataContainer(
                           icon: Icon(
                             Icons.air,
-                            color: Colors.white,
+                            color: theme.iconTheme.color,
                             size: 45,
                           ),
                           parameterName: "Respiration",
@@ -87,7 +85,7 @@ class User1 extends StatelessWidget {
                           measure: "/min"),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: screenHeight * 0.015),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -95,7 +93,7 @@ class User1 extends StatelessWidget {
                       UserdataContainer(
                           icon: Icon(
                             Icons.favorite,
-                            color: Colors.white,
+                            color: theme.iconTheme.color,
                             size: 45,
                           ),
                           parameterName: "Hemoglobin",
@@ -106,12 +104,12 @@ class User1 extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BlooddataPage()));
+                                  builder: (context) => const BlooddataPage()));
                         },
                         child: UserdataContainer(
                           icon: Icon(
                             Icons.bloodtype,
-                            color: Colors.white,
+                            color: theme.iconTheme.color,
                             size: 45,
                           ),
                           parameterName: "Blood Data",
@@ -122,24 +120,20 @@ class User1 extends StatelessWidget {
                       // Divider(),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.025),
+                  SizedBox(height: screenHeight * 0.015),
 
                   //............... displays saved data displayed on graphs .............//
                   Divider(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+                  SizedBox(height: screenHeight * 0.005),
                   Center(
                       child: Text(
                     'Saved Data',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
-                    ),
+                    style: theme.textTheme.displayLarge,
                   )),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+                  SizedBox(height: screenHeight * 0.005),
                   Divider(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                  SizedBox(height: screenHeight * 0.030),
 
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -150,7 +144,7 @@ class User1 extends StatelessWidget {
                           height: screenWidth * 0.6,
                           width: screenWidth * 1,
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: theme.cardColor,
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -169,13 +163,13 @@ class User1 extends StatelessWidget {
                       SizedBox(height: 10),
                       Text(
                         'Heart Rate',
-                        style: TextStyle(fontSize: 25, color: Colors.black),
+                        style: theme.textTheme.displayLarge,
                       ),
                     ],
                   ),
                   Divider(),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: screenHeight * 0.030),
 
                   Column(
                     children: [
@@ -183,7 +177,7 @@ class User1 extends StatelessWidget {
                         height: screenHeight * 0.24,
                         width: screenWidth * 0.9,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: theme.cardColor,
                             borderRadius: BorderRadius.circular(20)),
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -197,12 +191,12 @@ class User1 extends StatelessWidget {
                       ),
                       Text(
                         'Blood Oxygen Level',
-                        style: TextStyle(fontSize: 25, color: Colors.black),
+                        style: theme.textTheme.displayLarge,
                       ),
                     ],
                   ),
                   Divider(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: screenHeight * 0.030),
 
                   Column(
                     children: [
@@ -210,19 +204,19 @@ class User1 extends StatelessWidget {
                         height: screenWidth * 0.6,
                         width: screenWidth * 0.9,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: theme.cardColor,
                             borderRadius: BorderRadius.circular(20)),
                         child: BarChartSample3(),
                       ),
                       SizedBox(height: 10),
                       Text(
                         'Respiration Rate',
-                        style: TextStyle(fontSize: 25, color: Colors.black),
+                        style: theme.textTheme.displayLarge,
                       ),
                     ],
                   ),
                   Divider(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                  SizedBox(height: screenHeight * 0.030),
 
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -233,7 +227,7 @@ class User1 extends StatelessWidget {
                           height: screenWidth * 0.6,
                           width: screenWidth * 1,
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: theme.cardColor,
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -252,11 +246,11 @@ class User1 extends StatelessWidget {
                       SizedBox(height: 10),
                       Text(
                         'SpO2',
-                        style: TextStyle(fontSize: 25, color: Colors.black),
+                        style: theme.textTheme.displayLarge,
                       ),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                  SizedBox(height: screenHeight * 0.03),
                 ],
               ),
             ),

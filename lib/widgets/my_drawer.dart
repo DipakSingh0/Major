@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projet/pages/others/contacts_page.dart';
 import 'package:projet/pages/others/notifications_page.dart';
-import 'package:projet/pages/others/profile_page.dart';
 import 'package:projet/pages/others/settings_page.dart';
+import 'package:projet/pages/profile/profile_page.dart';
 
 // import 'my_header_drawer.dart';
 
@@ -18,6 +18,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    // var theme = Theme.of(context);
     return Drawer(
       child: SingleChildScrollView(
         child: Column(
@@ -31,27 +32,33 @@ class _MyDrawerState extends State<MyDrawer> {
   }
 
   Widget myDrawerList() {
-    return Column(
-      children: [
-        menuItem(1, "Profile", Icons.dashboard_outlined,
-            currentPage == DrawerSections.homepage ? true : false),
-        menuItem(2, "Contacts", Icons.perm_contact_calendar_rounded,
-            currentPage == DrawerSections.homepage ? true : false),
-        menuItem(3, "Notifications", Icons.notifications,
-            currentPage == DrawerSections.homepage ? true : false),
-        menuItem(4, "Settings", Icons.settings,
-            currentPage == DrawerSections.homepage ? true : false),
-        menuItem(5, "Privacy Policy", Icons.privacy_tip_sharp,
-            currentPage == DrawerSections.homepage ? true : false),
-        menuItem(6, "Send Feedback", Icons.feedback,
-            currentPage == DrawerSections.homepage ? true : false),
-      ],
+    var theme = Theme.of(context);
+    return Container(
+      color: theme.scaffoldBackgroundColor,
+      child: Column(
+        children: [
+          menuItem(1, "Profile", Icons.dashboard_outlined,
+              currentPage == DrawerSections.homepage ? true : false),
+          menuItem(2, "Contacts", Icons.perm_contact_calendar_rounded,
+              currentPage == DrawerSections.homepage ? true : false),
+          menuItem(3, "Notifications", Icons.notifications,
+              currentPage == DrawerSections.homepage ? true : false),
+          menuItem(4, "Settings", Icons.settings,
+              currentPage == DrawerSections.homepage ? true : false),
+          menuItem(5, "Privacy Policy", Icons.privacy_tip_sharp,
+              currentPage == DrawerSections.homepage ? true : false),
+          menuItem(6, "Send Feedback", Icons.feedback,
+              currentPage == DrawerSections.homepage ? true : false),
+        ],
+      ),
     );
   }
 
   Widget menuItem(int id, String title, IconData icon, bool selected) {
+    var theme = Theme.of(context);
     return Material(
-        color: selected ? Colors.blue[300] : Colors.transparent,
+        // color: selected ? Colors.blue[300] : Colors.transparent,
+        color: theme.scaffoldBackgroundColor,
         child: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -90,17 +97,13 @@ class _MyDrawerState extends State<MyDrawer> {
                     child: Icon(
                       icon,
                       size: 22,
-                      color: Colors.white,
+                      color: theme.iconTheme.color,
                     ),
                   ),
                   SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                   Expanded(
                     flex: 4,
-                    child: Text(title,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        )),
+                    child: Text(title, style: theme.textTheme.displayMedium),
                   ),
                 ],
               ),
@@ -128,8 +131,10 @@ class MyHeaderDrawer extends StatefulWidget {
 class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
     return Container(
-        color: Colors.blue,
+        color: theme.scaffoldBackgroundColor,
         width: double.infinity,
         height: 200,
         padding: EdgeInsets.only(top: 15.0),
@@ -149,17 +154,11 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             ),
             Text(
               'Nirantar',
-              style: TextStyle(
-                color: Colors.grey[200],
-                fontSize: 25,
-              ),
+              style: theme.textTheme.displayLarge,
             ),
             Text(
               'nirantar123@gmail.com',
-              style: TextStyle(
-                color: Colors.grey[200],
-                fontSize: 16,
-              ),
+              style: theme.textTheme.displaySmall,
             ),
           ],
         ));

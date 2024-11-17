@@ -11,7 +11,7 @@ class ContactsPage extends StatelessWidget {
             toolbarHeight: 75,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             title: const Text(
-              'C O N T A C T S',
+              'C o n t a c t s',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 25,

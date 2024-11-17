@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/home/homewidget/staticcontainers/static_user_container.dart';
+import 'package:projet/pages/home/homewidget/static_user_container.dart';
 import 'package:projet/pages/profile/profile_page.dart';
 import 'package:projet/widgets/my_drawer.dart';
-import '../../widgets/my_botom_bar_widget.dart';
 import 'homewidget/dialogbox_widget.dart';
 import '../userpage/user.dart';
-import 'homewidget/staticcontainers/user_smallercontainers.dart';
+import 'homewidget/user_smallercontainers.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,36 +16,31 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _containers = [];
 
-  var currentPage = DrawerSections.homepage;
+  // var currentPage = DrawerSections.homepage;
 
   @override
   Widget build(BuildContext context) {
-    // final theme = Theme.of(context);
-    //  var  screenHidth  = MediaQuery.of(context).size.height;
-    // var  screenWidth  = MediaQuery.of(context).size.width;
-
+    var theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
+        backgroundColor: theme.scaffoldBackgroundColor,
+        extendBody: true,
         drawer: MyDrawer(),
-        bottomNavigationBar: MyBottomBarWidget(),
+        // bottomNavigationBar: MyBottomBarWidget(),
         appBar: AppBar(
           toolbarHeight: 75,
-          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-          title: const Text('Home Page',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-                fontFamily: "poppins",
-                letterSpacing: 1.5,
-                color: Colors.white,
-              )),
+          backgroundColor: theme.appBarTheme.backgroundColor,
+          title: Text(
+            'Home Page',
+            style: theme.textTheme.displayLarge,
+          ),
           centerTitle: true,
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                icon: const Icon(
+                icon: Icon(
                   Icons.menu,
-                  color: Colors.white,
+                  color: theme.iconTheme.color,
                   size: 32,
                 ),
                 onPressed: () {
@@ -63,57 +57,61 @@ class _HomePageState extends State<HomePage> {
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 10.0),
-                child: Icon(Icons.person, color: Colors.white, size: 32),
+                child:
+                    Icon(Icons.person, color: theme.iconTheme.color, size: 32),
               ),
             ),
           ],
         ),
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    //......................StaticUserContainer Widget.......................//
+                    StaticUserContainer(
+                      // userName: 'hary',
+                      childName: 'Mukeshar',
+                      parentName: 'Avishek Kumar',
+                      dobDate: '2060/01/01',
+                      bedNumber: '18',
+                      contactNumber: '9841919333',
+                    ),
+                    StaticUserContainer(
+                      // userName: 'hary',
+                      childName: '',
+                      parentName: '',
+                      dobDate: '',
+                      bedNumber: '',
+                      contactNumber: '',
+                    ),
+                    StaticUserContainer(
+                      // userName: 'hary',
+                      childName: '',
+                      parentName: '',
+                      dobDate: '',
+                      bedNumber: '',
+                      contactNumber: '',
+                    ),
 
-
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              //......................StaticUserContainer Widget.......................//
-              StaticUserContainer(
-                // userName: 'hary',
-                childName: 'Mukeshar',
-                parentName: 'Avishek Kumar',
-                dobDate: '2060/01/01',
-                bedNumber: '18',
-                contactNumber: '9841919333',
-              ),
-              StaticUserContainer(
-                // userName: 'hary',
-                childName: '',
-                parentName: '',
-                dobDate: '',
-                bedNumber: '',
-                contactNumber: '',
-              ),
-              StaticUserContainer(
-                // userName: 'hary',
-                childName: '',
-                parentName: '',
-                dobDate: '',
-                bedNumber: '',
-                contactNumber: '',
-              ),
-
-
-//..............This is to create dynamic list of containers................//
-              SizedBox(
-                height: 300,
-                child: ListView.builder(
-                  itemCount: _containers.length,
-                  itemBuilder: (context, index) {
-                    return _containers[index];
-                  },
-                  shrinkWrap: true,
+                    //..............This is to create dynamic list of containers................//
+                    SizedBox(
+                      height: 300,
+                      child: ListView.builder(
+                        itemCount: _containers.length,
+                        itemBuilder: (context, index) {
+                          return _containers[index];
+                        },
+                        shrinkWrap: true,
+                      ),
+                    ),
+                    SizedBox(height: 30)
+                  ],
                 ),
               ),
-              SizedBox(height: 30)
-            ],
-          ),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -121,6 +119,7 @@ class _HomePageState extends State<HomePage> {
           },
           child: const Icon(Icons.add),
         ),
+        // floatingActionButtonLocation: CustomFloatingActionButtonLocation(),
       ),
     );
   }
@@ -143,6 +142,7 @@ class _HomePageState extends State<HomePage> {
 
 //..............Dynamically created Container...................//
   Widget _buildContainer(int index) {
+    var theme = Theme.of(context);
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
 
@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
           width: screenWidth / 1.05,
           margin: const EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
-            color: Colors.blue[300],
+            color: theme.cardTheme.color,
             borderRadius: BorderRadius.circular(30),
             border: Border.all(
               color: Colors.grey,
@@ -188,11 +188,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               // "Name: " + childName,
                               "Name: ",
-
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                               style: theme.textTheme.bodyLarge,
                             ),
                             SizedBox(
                               height: 8,
@@ -200,11 +196,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               // "Parent Name:\n" + parentName,
                               "Parent Name:\n",
-
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.bodyLarge,
                             ),
                             SizedBox(
                               height: 8,
@@ -212,11 +204,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               // "Bed Number:" + bedNumber,
                               "Bed Number:",
-
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.bodyLarge,
                             ),
                             SizedBox(
                               height: 8,
@@ -224,11 +212,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               // "DOB:" + dobDate,
                               "DOB:",
-
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.bodyLarge,
                             ),
                             SizedBox(
                               height: 8,
@@ -236,11 +220,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               // "Parent Contact:\n" + contactNumber,
                               "Parent Contact:\n",
-
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                               style: theme.textTheme.bodyLarge,
                             ),
                             SizedBox(
                               height: 8,
@@ -259,16 +239,16 @@ class _HomePageState extends State<HomePage> {
                       crossAxisSpacing: 6.0,
                       mainAxisSpacing: 6.0,
                       children: [
-                        UserdataSmallContainer(
+                         UserdataSmallContainer(
                             icon: Icon(Icons.heart_broken,
-                                color: Colors.blue, size: 25),
+                                color: theme.iconTheme.color, size: 25),
                             parameterName: "Heart Rate",
                             value: "120",
                             measure: "/min"),
-                        UserdataSmallContainer(
+                         UserdataSmallContainer(
                             icon: Icon(
                               Icons.air,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
                             parameterName: "Respiration",
@@ -277,7 +257,7 @@ class _HomePageState extends State<HomePage> {
                         UserdataSmallContainer(
                             icon: Icon(
                               Icons.thermostat,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
                             parameterName: "Temperature",
@@ -286,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                         UserdataSmallContainer(
                             icon: Icon(
                               Icons.bloodtype,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
                             parameterName: "SpO2",
@@ -304,3 +284,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+// class CustomFloatingActionButtonLocation extends FloatingActionButtonLocation {
+//   @override
+//   Offset getOffset(ScaffoldPrelayoutGeometry scaffoldGeometry) {
+//     return Offset(
+//       scaffoldGeometry.scaffoldSize.width - 85,
+//       scaffoldGeometry.scaffoldSize.height - kBottomNavigationBarHeight - 95,
+//     );
+//   }
+// }

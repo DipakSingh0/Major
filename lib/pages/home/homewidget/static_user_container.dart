@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/home/homewidget/staticcontainers/user_smallercontainers.dart';
+import 'package:projet/pages/home/homewidget/user_smallercontainers.dart';
 import 'package:projet/pages/userpage/user.dart';
 
 class StaticUserContainer extends StatelessWidget {
@@ -15,13 +15,13 @@ class StaticUserContainer extends StatelessWidget {
       required this.parentName,
       required this.dobDate,
       required this.bedNumber,
-      // required String userName,
       required this.contactNumber});
 
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
+    var theme = Theme.of(context);
 
     return Padding(
       padding: const EdgeInsets.all(5.0),
@@ -37,7 +37,7 @@ class StaticUserContainer extends StatelessWidget {
           width: screenWidth / 1.05,
           margin: const EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
-            color: Colors.blue[300],
+            color: theme.cardTheme.color,
             borderRadius: BorderRadius.circular(30),
             border: Border.all(
               color: Colors.grey,
@@ -61,62 +61,41 @@ class StaticUserContainer extends StatelessWidget {
                             ),
                             Text(
                               "Name: " + childName,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.labelLarge,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-
                             Text(
                               "Parent Name:\n" + parentName,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.labelLarge,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-
                             Text(
                               "Bed Number:" + bedNumber,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.labelLarge,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-
                             Text(
                               "DOB:" + dobDate,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.labelLarge,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-
                             Text(
                               "Parent Contact:\n" + contactNumber,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: theme.textTheme.labelLarge,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-
                           ],
-                        )
-                        ),
+                        )),
                   ),
                 ),
                 Expanded(
@@ -131,23 +110,23 @@ class StaticUserContainer extends StatelessWidget {
                       children: [
                         UserdataSmallContainer(
                             icon: Icon(Icons.heart_broken,
-                                color: Colors.blue, size: 25),
+                                color: theme.iconTheme.color, size: 25),
                             parameterName: "Heart Rate",
                             value: "120",
                             measure: "/min"),
                         UserdataSmallContainer(
-                           icon: Icon(
+                            icon: Icon(
                               Icons.air,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
                             parameterName: "Respiration",
                             value: "12",
                             measure: "/min"),
                         UserdataSmallContainer(
-                          icon: Icon(
+                            icon: Icon(
                               Icons.thermostat,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
                             parameterName: "Temperature",
@@ -156,10 +135,12 @@ class StaticUserContainer extends StatelessWidget {
                         UserdataSmallContainer(
                             icon: Icon(
                               Icons.bloodtype,
-                              color: Colors.blue,
+                              color: theme.iconTheme.color,
                               size: 25,
                             ),
-                            parameterName: "SpO2", value: "12", measure: "%"),
+                            parameterName: "SpO2",
+                            value: "12",
+                            measure: "%"),
                       ],
                     ),
                   ),

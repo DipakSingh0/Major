@@ -1,6 +1,5 @@
 import 'package:animated_progress_bar/animated_progress_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CircularAnimatedWidget extends StatefulWidget {
   const CircularAnimatedWidget({super.key});
@@ -14,13 +13,15 @@ class _CircularAnimatedWidgetState extends State<CircularAnimatedWidget> {
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
+    // var theme = Theme.of(context);
+
 
     return Stack(
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            color: Colors.grey[200],
+            color: Colors.transparent,
             height: screenHeight / 7.2,
             width: screenWidth / 3.2,
             child: AspectRatio(

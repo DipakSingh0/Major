@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
             toolbarHeight: 75,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             title: const Text(
-              'S E T T I N G S',
+              'S e t t i n g s',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 25,

@@ -6,16 +6,12 @@ class DialogBoxWidget {
     return showDialog(
       context: context,
       builder: (BuildContext context) {
+    var theme = Theme.of(context);
+
         return AlertDialog(
           title: Align(
             alignment: Alignment.center ,
-            child: const Text('Add new child' , style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: "poppins",
-                  letterSpacing: 1.5,
-                  color: Colors.black,
-                ), 
+            child: Text('Add new child' , style: theme.textTheme.displayMedium
                 ),
           ),
           content: SingleChildScrollView(
@@ -38,7 +34,7 @@ class DialogBoxWidget {
           ),
           actions: [
             TextButton(
-              child: const Text('Cancel'),
+              child: Text('Cancel' , style: theme.textTheme.displaySmall ,),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -88,7 +84,7 @@ class DialogBoxWidget {
   static Widget _buildTextField(String hintText) {
     return TextField(
       decoration: InputDecoration(
-        fillColor: Colors.grey.shade300,
+        fillColor: Colors.transparent,
         filled: true,
         hintText: hintText,
         border: OutlineInputBorder(

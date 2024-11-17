@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:projet/pages/home/home_page.dart';
+// import 'package:projet/pages/home/home_page.dart';
 import 'package:projet/pages/loginpages/password_verification.dart';
 import 'package:projet/pages/loginpages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:projet/widgets/bottom_nav_bar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       // If sign in is successful, navigate to HomePage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => MyBottomNavBar()),
       );
     } 
       // else sho the error output on loginpage

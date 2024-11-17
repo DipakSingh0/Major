@@ -2,20 +2,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/firebase_options.dart';
-import 'package:projet/pages/home/notification_page.dart';
-import 'package:projet/widgets/theme_widget.dart';
 import 'firebase_api.dart';
 import 'pages/home/home_page.dart';
-
+import 'widgets/theme/theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-void main() async{
-  BindingBase.debugZoneErrorsAreFatal = true;  // hides unnecessary O/P at terminal 
+void main() async {
+  BindingBase.debugZoneErrorsAreFatal =
+      true; // hides unnecessary O/P at terminal
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options:  DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseApi firebaseApi = FirebaseApi();
   await firebaseApi.initNotifications();
   runApp(const MyApp());
@@ -27,15 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme:lightTheme,
-         home: HomePage(),
-         navigatorKey: navigatorKey,
-         routes: {
-          '/notification_page': (context) => const NotificationPage(),
-         },
-      );
+      debugShowCheckedModeBanner: false,
+     theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+       home: HomePage(),
+      //  navigatorKey: navigatorKey,
+      //  routes: {
+      //   '/notification_page': (context) => const NotificationsPage(),
+      //  },
+    );
   }
 }
-
-

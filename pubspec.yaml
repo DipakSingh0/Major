@@ -22,6 +22,13 @@ dependencies:
   curved_navigation_bar: ^1.0.6 
   blurrycontainer: 2.1.0
 
+
+  cached_network_image: ^3.4.1    #----------
+  avatar_glow: ^3.0.1             #----------
+  google_fonts: ^6.2.1            #----------
+  flutter_svg: ^2.0.14             #----------
+
+
   fl_chart: ^0.69.0
   animated_progress_bar: ^0.0.3
   graphs: ^2.3.2
@@ -61,6 +68,10 @@ flutter:
 
     - lib/assets/heart.png
     - lib/assets/heart1.png
+
+
+    - lib/assets/svg/         #----------
+    # - assets/images/svg/          #----------
 
 
 
