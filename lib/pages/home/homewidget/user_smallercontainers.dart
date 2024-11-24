@@ -29,7 +29,7 @@ class UserdataSmallContainer extends StatelessWidget {
         height: screenHeight / 6,
         width: screenWidth / 5,
         decoration: BoxDecoration(
-          color: theme.cardTheme.color?.withOpacity(0.6),
+          color: theme.scaffoldBackgroundColor.withOpacity(0.6),
           borderRadius: BorderRadius.circular(20),
         ),
         child: LayoutBuilder(

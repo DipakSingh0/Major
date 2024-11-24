@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     theme: AppTheme.lightTheme,
+      theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-       home: HomePage(),
+      home: HomePage(),
       //  navigatorKey: navigatorKey,
       //  routes: {
       //   '/notification_page': (context) => const NotificationsPage(),

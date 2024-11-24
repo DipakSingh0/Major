@@ -1,10 +1,9 @@
-import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:projet/widgets/custom_divider.dart';
 import 'package:projet/pages/profile/widgets/custom_logout_list_tile.dart';
 
 import 'wards_page.dart';
+import 'widgets/avatar_glow_widget.dart';
 import 'widgets/custom_profile_list_tile.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -23,7 +22,7 @@ class ProfilePage extends StatelessWidget {
           toolbarHeight: 75,
           backgroundColor: theme.appBarTheme.backgroundColor,
 
-          title: Text('Profile Page', style: theme.textTheme.displayLarge),
+          title: Text('P R O F I L E', style: theme.textTheme.displayLarge),
           // leading: Icon(Icons.arrow_back , color: Colors.white,),
           centerTitle: true,
         ),
@@ -45,54 +44,8 @@ class ProfilePage extends StatelessWidget {
                     Stack(
                       children: [
                         // Profile image
-                        AvatarGlow(
-                          startDelay: const Duration(microseconds: 1000),
-                          repeat: true,
-                          glowRadiusFactor: 0.12,
-                          child: Material(
-                            elevation: 0.1,
-                            shape: const CircleBorder(),
-                            // color: AppColors.avatarGlowColor,
-                            color: theme.cardColor,
-                            child: Container(
-                              height: 140,
-                              width: 140,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                // color: AppColors.secondaryColor,
-                                color: theme.cardColor,
-                              ),
-                              child: ClipOval(
-                                child: CachedNetworkImage(
-                                  imageUrl:
-                                      "https://images.unsplash.com/photo-1529946179074-87642f6204d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) {
-                                    return Container(
-                                      height: 130,
-                                      width: 130,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            "assets/images/jpg/profile-placeholder.jpg",
-                                          ),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  errorWidget: (context, url, error) =>
-                                      Icon(
-                                    Icons.add,
-                                    // color: AppColors.primaryColor,
-                                    color: theme.iconTheme.color,
-                                    size: 40,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                        AvatarGlowWidget(theme: theme , 
+                        // height: 140 , width: 140,
                         ),
 
                         // Edit icon

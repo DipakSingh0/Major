@@ -4,6 +4,8 @@ import 'package:projet/pages/others/notifications_page.dart';
 import 'package:projet/pages/others/settings_page.dart';
 import 'package:projet/pages/profile/profile_page.dart';
 
+import 'custom_divider.dart';
+
 // import 'my_header_drawer.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -24,6 +26,7 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           children: [
             MyHeaderDrawer(),
+            const SizedBox(height: 10,),
             myDrawerList(),
           ],
         ),
@@ -37,18 +40,25 @@ class _MyDrawerState extends State<MyDrawer> {
       color: theme.scaffoldBackgroundColor,
       child: Column(
         children: [
+          const CustomDivider(),
           menuItem(1, "Profile", Icons.dashboard_outlined,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
           menuItem(2, "Contacts", Icons.perm_contact_calendar_rounded,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
           menuItem(3, "Notifications", Icons.notifications,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
           menuItem(4, "Settings", Icons.settings,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
           menuItem(5, "Privacy Policy", Icons.privacy_tip_sharp,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
           menuItem(6, "Send Feedback", Icons.feedback,
               currentPage == DrawerSections.homepage ? true : false),
+          const CustomDivider(),
         ],
       ),
     );
@@ -136,7 +146,7 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
     return Container(
         color: theme.scaffoldBackgroundColor,
         width: double.infinity,
-        height: 200,
+        height: 250,
         padding: EdgeInsets.only(top: 15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -152,10 +162,18 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
                     ),
                   )),
             ),
+            const SizedBox(
+              height: 8,
+            ),
+
             Text(
               'Nirantar',
               style: theme.textTheme.displayLarge,
             ),
+            const SizedBox(
+              height: 8,
+            ),
+
             Text(
               'nirantar123@gmail.com',
               style: theme.textTheme.displaySmall,

@@ -40,7 +40,7 @@ class StaticUserContainer extends StatelessWidget {
             color: theme.cardTheme.color,
             borderRadius: BorderRadius.circular(30),
             border: Border.all(
-              color: Colors.grey,
+              color: theme.scaffoldBackgroundColor ,
               width: 0.2,
             ),
           ),
